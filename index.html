@@ -6,7 +6,7 @@
 <title>Aleksandra Afanaseva — Pixel Art</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Tiny5&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--bg:#0a0c15;--panel:#111527;--panel2:#161b31;--ink:#ece7e1;--mute:#a29dac;--line:#262c45;
   --rose:#ec9cab;--rose2:#ffc7d0;--sky:#0b1e3c;--sky2:#0f2549;--gold:#ffd36b;--lock:#5b6078}
@@ -16,6 +16,7 @@ html{scroll-padding-top:20px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Archivo,system-ui,sans-serif;overflow-x:clip}
 a{color:inherit}
 h1,h2,h3,.px{font-family:"Pixelify Sans",ui-monospace,monospace;font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+h1,h2,h3,h4,.dhead h3,.proj h4,.two h4,.sech h2,.contact h2,.pop h3{font-family:"Tiny5","Pixelify Sans",monospace!important;font-weight:400!important;letter-spacing:.01em}
 .wrap{max-width:1180px;margin:0 auto;padding-inline:max(5vw,16px)}
 .pxbox{background:var(--panel);border:2px solid var(--line);box-shadow:0 0 0 2px #05070d,6px 6px 0 #05070d}
 .label{font:700 13px "Pixelify Sans",monospace;color:var(--mute);letter-spacing:.02em}
@@ -257,7 +258,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node locked" data-n="drawing" data-p="game-jams" style="grid-row:4;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Drawing mastery</span><span data-t="ru">Мастерство рисунка</span></span><span class="bar2"><b></b></span></button>
       </div>
     </div>
-    <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are skills I'm levelling up right now. 2D digital art lives in a separate portfolio.</span><span data-t="ru">Светящиеся навыки открыты, закрытые я прокачиваю прямо сейчас. 2D digital-арт живёт в отдельном портфолио.</span></p>
+    <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are skills I'm levelling up right now. The 2D digital artist portfolio is available separately on request by email.</span><span data-t="ru">Светящиеся навыки открыты, закрытые я прокачиваю прямо сейчас. Портфолио 2D digital-художника можно запросить отдельно по моей почте.</span></p>
 
     <div id="detail" aria-live="polite">
 
@@ -266,6 +267,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <p class="lede"><span data-t="en">I'm a pixel and 2D artist based in Madrid. My core is characters: faces, anatomy, emotion. I also cover environments, props, UI, icons and sprites, and adapt pixel density and palette to the style of each project.</span><span data-t="ru">Я пиксель- и 2D-художница из Мадрида. Моя основа — персонажи: лица, анатомия, эмоции. Ещё делаю окружение, пропсы, UI, иконки и спрайты, подстраивая плотность пикселя и палитру под стиль проекта.</span></p>
         <p class="lede" style="margin-top:-6px"><span data-t="en">I started as an artist at a small indie studio and study game design at U-Tad, so I plan art with the engine, the animators and the UI in mind.</span><span data-t="ru">Начинала художницей в небольшой инди-студии и учусь на геймдизайне в U-Tad, поэтому делаю арт сразу с расчётом на движок, аниматоров и интерфейс.</span></p>
         <p class="inspo"><span data-t="en">Inspired by Blasphemous above all, and by Lazy Bear Games: Graveyard Keeper and Punch Club.</span><span data-t="ru">Вдохновляюсь прежде всего Blasphemous, а ещё играми Lazy Bear Games: Graveyard Keeper и Punch Club.</span></p>
+        <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">Pick a skill in the tree above to see the work</span><span data-t="ru">Выберите навык в древе выше, чтобы увидеть работы</span></p>
       </article>
 
       <article class="det pxbox" data-d="core" hidden>
@@ -279,8 +281,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
           </div>
           <div>
             <h4><span data-t="en">How I work</span><span data-t="ru">Как я работаю</span></h4>
-            <ul class="ticks" data-t="en"><li>From scratch from a written brief or from references</li><li>Hand-finished assets, with AI used only as a reference</li><li>Layered, production-ready source files</li></ul>
-            <ul class="ticks" data-t="ru"><li>С нуля по описанию или по референсам</li><li>Ручная доработка ассета, нейросети только как референс</li><li>Послойные исходники, готовые к продакшену</li></ul>
+            <ul class="ticks" data-t="en"><li>From scratch from a written brief or from references</li><li>Hand-finished assets: AI as a reference, or turning an AI image into clean, finished pixel art</li><li>Layered, production-ready source files</li></ul>
+            <ul class="ticks" data-t="ru"><li>С нуля по описанию или по референсам</li><li>Ручная доработка ассета: нейросети как референс или доработка нейроизображения в красивый законченный пиксель-арт</li><li>Послойные исходники, готовые к продакшену</li></ul>
           </div>
         </div>
         
@@ -369,7 +371,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="ai" hidden>
         <div class="dhead"><span class="ic l" data-sprite="chip"></span><div><span class="label"><span data-t="en">Levelling up</span><span data-t="ru">Прокачиваю</span></span><h3><span data-t="en">AI workflow</span><span data-t="ru">Работа с нейросетями</span></h3></div></div>
-        <p class="lede"><span data-t="en">Improving how I use neural networks for references and ideas, for characters and pixel art in general, while every final asset stays hand-made.</span><span data-t="ru">Совершенствую работу с нейросетями для референсов и поиска идей, и для персонажей, и для пиксель-арта в целом, при этом финальный ассет всегда делаю руками.</span></p>
+        <p class="lede"><span data-t="en">Improving how I use neural networks: for references and ideas, and for turning AI images into clean, finished pixel art.</span><span data-t="ru">Совершенствую работу с нейросетями: для референсов и идей, а также для доработки нейроизображений в законченный пиксель-арт.</span></p>
         <div class="lockmsg"><span data-t="en">Training in progress</span><span data-t="ru">Тренировка идёт</span><span class="bar2"><b></b></span></div>
       </article>
     </div>
@@ -423,7 +425,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   <div class="box">
     <span class="label"><span data-t="en">On request</span><span data-t="ru">По запросу</span></span>
     <h3 id="popH"><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></h3>
-    <p><span data-t="en">My 2D digital illustration lives in a separate portfolio. Write to Aleksandra to get access to the 2D digital artist portfolio.</span><span data-t="ru">Мои 2D digital-иллюстрации собраны в отдельном портфолио. Напишите Александре, чтобы получить доступ к портфолио 2D digital-художника.</span></p>
+    <p><span data-t="en">The 2D digital artist portfolio is available separately on request by email.</span><span data-t="ru">Портфолио 2D digital-художника можно запросить отдельно по моей почте.</span></p>
     <div class="row2"><a href="mailto:Biersackneley@gmail.com?subject=2D%20portfolio">Biersackneley@gmail.com</a><button id="popClose" type="button"><span data-t="en">Close</span><span data-t="ru">Закрыть</span></button></div>
   </div>
 </div>
@@ -541,7 +543,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pop.classList.contains('on'))popShut()});
   nodes.forEach(n=>n.addEventListener('click',()=>{if(n.dataset.popup){popFrom=n;pop.classList.add('on');document.getElementById('popClose').focus();return}const id=n.dataset.n;if(location.hash!=='#'+id)location.hash=id;else select(id,true)}));
   document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.goto}));
-  const route=scroll=>{const h=location.hash.slice(1);if(ids.includes(h))select(h,scroll);else if(!dets.some(d=>!d.hidden))select('characters',false)};
+  const route=scroll=>{const h=location.hash.slice(1);if(ids.includes(h))select(h,scroll);else if(!dets.some(d=>!d.hidden))select('artist',false)};
   addEventListener('hashchange',()=>route(true));
 
   let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
