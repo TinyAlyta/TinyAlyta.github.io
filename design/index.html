@@ -219,6 +219,14 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 @media(max-width:640px){.mapwrap{grid-template-columns:minmax(0,1fr)}.smap{justify-self:center}}
 .g4s{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:820px){.g4s{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tbls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px}
+.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th{text-align:left;font:500 13px "Pixelify Sans",monospace;color:var(--mute);padding:6px 8px;border-bottom:2px solid var(--line)}
+.tbl td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:nth-child(even) td{background:#ffffff06}
+.tbl .yes{color:var(--rose);font-weight:700}.tbl .no{color:var(--lock)}
+@media(max-width:900px){.tbls{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8.5em}.stack td::before{content:attr(data-l);float:inline-start;width:8em;margin-inline-start:-8.5em;color:var(--mute);font-size:13px}}
 .note{margin:0;padding:12px 14px;border:2px dashed var(--gold);color:var(--mute);font-size:15px;max-width:66ch}
 @media(max-width:520px){.tr{grid-template-columns:minmax(0,1fr)}.tr.th{display:none}}
 </style>
@@ -276,7 +284,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
         <button class="node unlocked" data-n="combat" data-p="systems" style="grid-row:3;grid-column:1"><span class="ic" data-sprite="sword"></span><span class="nm"><span data-t="en">Combat design</span><span data-t="ru">Комбат-дизайн</span></span><span class="st"><span data-t="en">Analysis</span><span data-t="ru">Анализ</span></span></button>
         <button class="node unlocked" data-n="game-jams" data-p="level production" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">3 jams</span><span data-t="ru">3 джема</span></span></button>
-        <button class="node unlocked" data-n="ux" data-p="production" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="eye"></span><span class="nm"><span data-t="en">UX design</span><span data-t="ru">UX-дизайн</span></span><span class="st"><span data-t="en">2 systems</span><span data-t="ru">2 системы</span></span></button>
+        <button class="node unlocked" data-n="org" data-p="production" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="table"></span><span class="nm"><span data-t="en">Organization</span><span data-t="ru">Организация</span></span><span class="st"><span data-t="en">4 tables</span><span data-t="ru">4 таблицы</span></span></button>
+        <button class="node unlocked" data-n="ux" data-p="org" style="grid-row:4;grid-column:3"><span class="ic" data-sprite="eye"></span><span class="nm"><span data-t="en">UX design</span><span data-t="ru">UX-дизайн</span></span><span class="st"><span data-t="en">2 systems</span><span data-t="ru">2 системы</span></span></button>
       </div>
     </div>
     <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are skills I'm levelling up right now.</span><span data-t="ru">Светящиеся навыки открыты, закрытые я прокачиваю прямо сейчас.</span></p>
@@ -310,7 +319,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
           <h4>The Spectre Spectacle</h4>
           <p><span data-t="en">A narrative roguelite in a dark fairy-tale theatre, our diploma game in Unity for Steam. Ana and I are the two game designers and the glue of a team of 12: 5 programmers and 5 artists. I own level design, gameplay, enemies, UX, VFX and sound design, and QA, and co-manage the project. Vertical slice in January 2027, Steam release planned for 2027.</span><span data-t="ru">Нарративный roguelite в мрачном сказочном театре, наша дипломная игра на Unity для Steam. Мы с Аной — два геймдизайнера и связующее звено команды из 12 человек: 5 программистов и 5 художников. На мне левел-дизайн, геймплей, враги, UX, дизайн VFX и звука и QA, плюс совместное ведение проекта. Вертикальный срез в январе 2027, релиз в Steam запланирован на 2027.</span></p>
           <p class="quote"><span data-t="en">My standard for the GDD: clear and detailed enough that the team could finish the game if both designers disappeared.</span><span data-t="ru">Мой стандарт для GDD: документ должен быть настолько понятным и подробным, чтобы команда могла закончить игру, даже если оба дизайнера исчезнут.</span></p>
-          <div class="chips2"><button class="go" data-goto="level">▶ <span data-t="en">Scene map &amp; rooms</span><span data-t="ru">Карта и комнаты</span></button><button class="go" data-goto="systems">▶ <span data-t="en">Enemies &amp; mini-bosses</span><span data-t="ru">Враги и мини-боссы</span></button><button class="go" data-goto="ux">▶ <span data-t="en">Dialogue &amp; save systems</span><span data-t="ru">Диалоги и сохранения</span></button><button class="go" data-goto="production">▶ <span data-t="en">Team process</span><span data-t="ru">Процесс команды</span></button></div>
+          <div class="chips2"><button class="go" data-goto="level">▶ <span data-t="en">Scene map &amp; rooms</span><span data-t="ru">Карта и комнаты</span></button><button class="go" data-goto="systems">▶ <span data-t="en">Enemies &amp; mini-bosses</span><span data-t="ru">Враги и мини-боссы</span></button><button class="go" data-goto="ux">▶ <span data-t="en">Dialogue &amp; save systems</span><span data-t="ru">Диалоги и сохранения</span></button><button class="go" data-goto="org">▶ <span data-t="en">Organization tables</span><span data-t="ru">Таблицы организации</span></button></div>
         </div>
         <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">Pick a skill in the tree above to see the work</span><span data-t="ru">Выберите навык в древе выше, чтобы увидеть работы</span></p>
       </article>
@@ -455,6 +464,13 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         </div>
       </article>
 
+      <article class="det pxbox" data-d="org" hidden>
+        <div class="dhead"><span class="ic" data-sprite="table"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Organization</span><span data-t="ru">Организация</span></h3></div></div>
+        <p class="lede"><span data-t="en">How we organise The Spectre Spectacle: a team of 12 where programmers and artists never have to talk to each other directly, because the two designers hold the project together.</span><span data-t="ru">Как устроена работа над The Spectre Spectacle: команда из 12 человек, где программистам и художникам не нужно напрямую договариваться между собой, потому что проект держат вместе два дизайнера.</span></p>
+        <div class="tbls"><div class="tblwrap"><p class="sub"><span data-t="en">Team structure</span><span data-t="ru">Структура команды</span></p><table class="tbl stack"><thead><tr><th><span data-t="en">Department</span><span data-t="ru">Департамент</span></th><th><span data-t="en">People</span><span data-t="ru">Людей</span></th><th><span data-t="en">Who decides</span><span data-t="ru">Кто решает</span></th><th><span data-t="en">Owns</span><span data-t="ru">Отвечает за</span></th></tr></thead><tbody><tr><td><span data-t="en">Design</span><span data-t="ru">Дизайн</span></td><td>2</td><td><span data-t="en">Alyta and Ana</span><span data-t="ru">Алита и Ана</span></td><td><span data-t="en">All design decisions, project management, documentation</span><span data-t="ru">Все дизайн-решения, ведение проекта, документация</span></td></tr><tr><td><span data-t="en">Art and animation</span><span data-t="ru">Арт и анимация</span></td><td>5</td><td><span data-t="en">Lead artist</span><span data-t="ru">Ведущая художница</span></td><td><span data-t="en">Art and animation decisions, VFX production</span><span data-t="ru">Решения по арту и анимации, производство VFX</span></td></tr><tr><td><span data-t="en">Programming</span><span data-t="ru">Программирование</span></td><td>5</td><td><span data-t="en">Programming organizer</span><span data-t="ru">Организатор программистов</span></td><td><span data-t="en">Enemies and sound, map, shops and economy, UI and saves, combat</span><span data-t="ru">Враги и звук, карта, магазины и экономика, UI и сохранения, бой</span></td></tr></tbody></table></div><div class="tblwrap"><p class="sub"><span data-t="en">Design split</span><span data-t="ru">Распределение дизайна</span></p><table class="tbl stack"><thead><tr><th><span data-t="en">Area</span><span data-t="ru">Область</span></th><th>Alyta</th><th>Ana</th></tr></thead><tbody><tr><td><span data-t="en">Level design</span><span data-t="ru">Левел-дизайн</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr><tr><td><span data-t="en">Gameplay and enemies</span><span data-t="ru">Геймплей и враги</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr><tr><td><span data-t="en">UX</span><span data-t="ru">UX</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr><tr><td><span data-t="en">VFX design</span><span data-t="ru">Дизайн VFX</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr><tr><td><span data-t="en">Sound design</span><span data-t="ru">Саунд-дизайн</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr><tr><td><span data-t="en">Narrative</span><span data-t="ru">Нарратив</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Combat</span><span data-t="ru">Бой</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Economy and items</span><span data-t="ru">Экономика и предметы</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Music</span><span data-t="ru">Музыка</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">QA</span><span data-t="ru">QA</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Project management</span><span data-t="ru">Ведение проекта</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr></tbody></table></div><div class="tblwrap"><p class="sub"><span data-t="en">Team rhythm</span><span data-t="ru">Ритм команды</span></p><table class="tbl stack"><thead><tr><th><span data-t="en">When</span><span data-t="ru">Когда</span></th><th><span data-t="en">What</span><span data-t="ru">Что</span></th><th><span data-t="en">Who</span><span data-t="ru">Кто</span></th></tr></thead><tbody><tr><td><span data-t="en">Tuesday, 4 h</span><span data-t="ru">Вторник, 4 ч</span></td><td><span data-t="en">Sprint review; the first 2 hours are cross-department</span><span data-t="ru">Разбор спринта; первые 2 часа — все департаменты вместе</span></td><td><span data-t="en">Whole team</span><span data-t="ru">Вся команда</span></td></tr><tr><td><span data-t="en">Friday, about 2 h</span><span data-t="ru">Пятница, около 2 ч</span></td><td><span data-t="en">Design call</span><span data-t="ru">Созвон дизайнеров</span></td><td><span data-t="en">Designers</span><span data-t="ru">Дизайнеры</span></td></tr><tr><td><span data-t="en">Weekly</span><span data-t="ru">Каждую неделю</span></td><td><span data-t="en">Department calls and one-week sprints</span><span data-t="ru">Созвоны департаментов и недельные спринты</span></td><td><span data-t="en">Each department</span><span data-t="ru">Каждый департамент</span></td></tr><tr><td><span data-t="en">Always</span><span data-t="ru">Постоянно</span></td><td><span data-t="en">Tasks in Plaky, code on GitHub, production plan in a shared sheet</span><span data-t="ru">Задачи в Plaky, код на GitHub, производственный план в общей таблице</span></td><td><span data-t="en">Whole team</span><span data-t="ru">Вся команда</span></td></tr></tbody></table></div><div class="tblwrap"><p class="sub"><span data-t="en">Scope</span><span data-t="ru">Объём</span></p><table class="tbl stack"><thead><tr><th><span data-t="en">Content</span><span data-t="ru">Контент</span></th><th><span data-t="en">Vertical slice, 15 Jan 2027</span><span data-t="ru">Вертикальный срез, 15 янв 2027</span></th><th><span data-t="en">Release, 2027</span><span data-t="ru">Релиз, 2027</span></th></tr></thead><tbody><tr><td><span data-t="en">Acts</span><span data-t="ru">Акты</span></td><td><span data-t="en">Act 1</span><span data-t="ru">Акт 1</span></td><td>3</td></tr><tr><td><span data-t="en">Scenes</span><span data-t="ru">Сцены</span></td><td><span data-t="en">Act 1</span><span data-t="ru">Акта 1</span></td><td>9</td></tr><tr><td><span data-t="en">Weapons</span><span data-t="ru">Оружие</span></td><td>1</td><td>3</td></tr><tr><td><span data-t="en">Both shops, lobby, menus, HUD</span><span data-t="ru">Оба магазина, лобби, меню, HUD</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Tutorial</span><span data-t="ru">Туториал</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Cutscenes, prologue and finale</span><span data-t="ru">Катсцены, пролог и финал</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr><tr><td><span data-t="en">Localization</span><span data-t="ru">Локализация</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr></tbody></table></div></div>
+        <p class="note" style="margin-top:16px"><span data-t="en">Known gaps we track openly: no composer, nobody owns marketing, and no budget, so the team will split the Steam fee.</span><span data-t="ru">Известные пробелы, которые мы честно отслеживаем: нет композитора, никто не отвечает за маркетинг, бюджета нет, поэтому взнос в Steam команда делит между собой.</span></p>
+      </article>
+
       <article class="det pxbox" data-d="ux" hidden>
         <div class="dhead"><span class="ic" data-sprite="eye"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">UX design</span><span data-t="ru">UX-дизайн</span></h3></div></div>
         <div class="proj">
@@ -549,6 +565,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     gears:["...TT....","..TTTT...","TTT..TTT.","TT....TT.","TT....TT.","TTT..TTT.","..TTTT.CC","...TT.CCC","......CC."],
     map:["WWWWWWWWW","WMMMWYYYW","WMMMWYYYW","WWLWWWLWW","WCCCCCCCW","WCCCRCCCW","WCCCCCCCW","WWWWLWWWW"],
     eye:["..WWWWW..",".WWCCCWW.","WWCKKKCWW","WWCKWKCWW","WWCKKKCWW",".WWCCCWW.","..WWWWW.."],
+    table:["KKKKKKKKK","KYYKYYKYK","KKKKKKKKK","KWWKWWKWK","KKKKKKKKK","KWWKWWKWK","KKKKKKKKK","KWWKWWKWK","KKKKKKKKK"],
     star:["....T....","...TTT...","TTTTTTTTT",".TTTtTTT.","..TTTTT..",".TTT.TTT.","TT.....TT"],
     heart:[".PP.PP.","PPPPPPP","PWPPPPP","PPPPPPP",".PPPPP.","..PPP..","...P..."],
     artist:["..........PP",".........PPP","........LLPP",".......YLLL.","......YYtL..",".....YYt....","....YYt.....","...YYt......","..SSt.......","..SS........",".KS.........","K..........."],
@@ -569,27 +586,34 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     return `<svg viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`};
   document.querySelectorAll('[data-sprite]').forEach(el=>{const m=SPR[el.dataset.sprite];if(m)el.innerHTML=svgOf(m)});
   {const em=document.querySelector('.emblem'),FW=28,FH=22,base=SPR.faun;
-   const easel=["BBBBBBBBBB",...Array(8).fill("BWWWWWWWWB"),"BBBBBBBBBB","..B....B..","..B....B..",".B......B.",".B......B.","B........B"];
-   const heart=["RRR.RRRR","R.R.R..R","R.RRR..R","R......R","RRRR.RRR","...R.R..","...RRR..","........"];
-   const hp=[];heart.forEach((r,y)=>[...r].forEach((c,x)=>{if(c==='R')hp.push([x,y])}));
    const put=(g,spr,ox,oy)=>spr.forEach((r,y)=>[...r].forEach((c,x)=>{const X=x+ox,Y=y+oy;if(c!=='.'&&Y>=0&&Y<FH&&X>=0&&X<FW)g[Y][X]=c}));
    const dot=(g,x,y,c)=>{if(y>=0&&y<FH&&x>=0&&x<FW)g[y][x]=c};
-   const faun=(blink)=>base.map(r=>blink?r.replace(/we/g,'ss'):r);
-   const frame=({n=0,pose=0,jump=0,blink=false,spark=0,glow=false})=>{
+   const lines=[[19,6,5],[19,8,7],[21,10,4],[19,12,6],[21,14,3]];
+   const total=lines.reduce((a,l)=>a+l[2],0);
+   const frame=({n=0,tap=0,blink=false,nod=0,done=false,cur=true})=>{
      const g=Array.from({length:FH},()=>Array(FW).fill('.'));
-     put(g,easel,18,4);
-     hp.slice(0,n).forEach(([x,y])=>dot(g,19+x,5+y,glow&&spark%2?'Y':'M'));
-     const oy=2-jump,f=faun(blink).map(r=>r.split(''));
-     if(pose){f[14][13]='.';f[15][13]='.'}
-     put(g,f.map(r=>r.join('')),0,oy);
-     if(pose===1){dot(g,13,14+oy,'s');dot(g,14,14+oy,'s');dot(g,15,13+oy,'Y');dot(g,16,12+oy,'Y');dot(g,17,11+oy,'K')}
-     if(pose===2){dot(g,13,14+oy,'s');dot(g,14,13+oy,'s');dot(g,15,12+oy,'Y');dot(g,16,11+oy,'Y');dot(g,17,10+oy,'K')}
+     for(let x=17;x<=27;x++){dot(g,x,4,'K');dot(g,x,16,'K')}
+     for(let y=4;y<=16;y++){dot(g,17,y,'K');dot(g,27,y,'K')}
+     for(let y=5;y<=15;y++)for(let x=18;x<=26;x++)dot(g,x,y,'D');
+     let left=n,cx=19,cy=6;
+     lines.forEach(([x0,y,len])=>{const k=Math.max(0,Math.min(len,left));for(let q=0;q<k;q++)dot(g,x0+q,y,done?'Y':'M');if(left>0&&left<=len){cx=x0+k;cy=y}left-=len});
+     if(cur&&!done)dot(g,Math.min(cx,25),cy,'W');
+     if(done){dot(g,25,6,'G');dot(g,24,7,'G');dot(g,23,6,'G')}
+     dot(g,22,17,'K');dot(g,21,18,'K');dot(g,22,18,'K');dot(g,23,18,'K');
+     const f=faun(blink).map(r=>r.split(''));f[14][13]='.';f[15][13]='.';f[14][2]='.';f[15][2]='.';
+     put(g,f.map(r=>r.join('')),0,1+nod);
+     for(let x=0;x<FW;x++){dot(g,x,19,'B');dot(g,x,20,'b')}
+     dot(g,2,21,'b');dot(g,25,21,'b');
+     for(let x=12;x<=19;x++)dot(g,x,18,'L');
+     const k1=tap===1?13:tap===2?16:14,k2=tap===1?17:tap===2?14:18;
+     dot(g,k1,18,'W');dot(g,k2,18,'W');
+     dot(g,13,16+nod,'s');dot(g,k1,17,'s');dot(g,3,16+nod,'s');dot(g,4,17,'s');dot(g,k2,17,'s');
      return svgOf(g.map(r=>r.join('')))};
+   function faun(blink){return base.map(r=>blink?r.replace(/we/g,'ss'):r)}
    const seq=[];
-   for(let n=0;n<=hp.length;n+=3)seq.push(frame({n,pose:seq.length%2?2:1,blink:n===18}));
-   const full=hp.length;
-   seq.push(frame({n:full,pose:1}),frame({n:full,jump:2,spark:1,glow:true}),frame({n:full,spark:2}),frame({n:full,jump:2,spark:3,glow:true}),frame({n:full,spark:4}),frame({n:full}),frame({n:full,blink:true}),frame({n:full}),frame({n:0}),frame({n:0,blink:true}));
-   let i=0;em.innerHTML=reduce?frame({n:full}):seq[0];
+   for(let n=0;n<=total;n+=2)seq.push(frame({n,tap:seq.length%2?1:2,blink:n===12,cur:seq.length%2===0}));
+   seq.push(frame({n:total,cur:false}),frame({n:total,done:true,nod:1}),frame({n:total,done:true}),frame({n:total,done:true,nod:1}),frame({n:total,done:true,blink:true}),frame({n:total,done:true}),frame({n:0}),frame({n:0,blink:true}));
+   let i=0;em.innerHTML=reduce?frame({n:total,done:true}):seq[0];
    if(!reduce)setInterval(()=>{i=(i+1)%seq.length;em.innerHTML=seq[i]},260)}
   const cv=document.getElementById('stars'),cx=cv.getContext('2d'),P=3;
   let stars=[],shoot=null,W=0,H=0,t0=0;
@@ -651,6 +675,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   setLang(saved||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'en'));
   route(ids.includes(location.hash.slice(1)));
   {const m=document.getElementById('smap');if(m){const rows=[['F'],['F','H'],['B','F','F'],['F','S','T','F'],['H','F'],['F','B','F'],['T','F'],['F']];m.innerHTML=rows.map(r=>'<div class="row">'+r.map(t=>'<i class="'+t+'">'+t+'</i>').join('')+'</div>').join('')}}
+  document.querySelectorAll('.stack').forEach(t=>{const hs=[...t.querySelectorAll('thead th')].map(th=>th);t.querySelectorAll('tbody tr').forEach(tr=>[...tr.children].forEach((td,i)=>{const h=hs[i];if(h){const l=root.dataset.lang==='ru'&&h.querySelector('[data-t=ru]')?h.querySelector('[data-t=ru]').textContent:(h.querySelector('[data-t=en]')||h).textContent;td.dataset.l=l}}))});
   const cp=document.getElementById('copy');
   cp.addEventListener('click',async()=>{const ok=root.dataset.lang==='ru'?'Скопировано':'Copied';
     try{await navigator.clipboard.writeText('Biersackneley@gmail.com');cp.textContent=ok}catch(e){cp.textContent='Biersackneley@gmail.com'}});

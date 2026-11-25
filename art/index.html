@@ -224,7 +224,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     <div class="lang" role="group" aria-label="Language"><button data-set="en" aria-pressed="true">EN</button><button data-set="ru" aria-pressed="false">RU</button></div>
   </div>
   <div class="wrap sheet">
-    <div class="emblem" data-sprite="faun" aria-hidden="true"></div>
+    <div class="emblem" data-sprite="faunAfro" aria-hidden="true"></div>
     <div>
       <h1>Aleksandra Afanaseva</h1>
       <p class="aka"><span data-t="en">Artist name: <b>Alita</b></span><span data-t="ru">Имя художника: <b>Алита</b></span></p>
@@ -428,6 +428,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,root=document.documentElement;
   const PAL={M:'#5fb7a0',S:'#f6cfb4',u:'#5b7fc0',n:'#efe0c4',h:'#6e4428',s:'#f6cfb4',e:'#1b1a22',w:'#ffffff',p:'#f08fa3',m:'#b8465c',t:'#5b7fc0',f:'#8a5a3c',F:'#5e3a24',k:'#2a2f45',H:'#6b4a6e',S:'#f2c6a8',E:'#1b1a22',R:'#d9566f',C:'#5b7fc0',W:'#dfe6f5',Y:'#ffd36b',D:'#34507f',G:'#5fb784',K:'#2a2f45',B:'#a36a3e',b:'#7a4a28',P:'#ec9cab',O:'#ff9b4a',L:'#8a90aa',l:'#5b6078',T:'#ffd36b',t:'#c99a2a'};
   const SPR={
+    faunAfro:["..n.hhhhhhhh.n..","..nhhfhhfhhfhhn.",".hhfhhfhhfhhfhh.","hfhhfhhfhhfhhfhh","hhfhhfhhfhhfhhfh","hfhsssssssssshfh","hhsssssssssssshh","sshswessssweshss","hhhseesssseeshhh","hfhpssssssssphfh","hhhssssmmsssshhh",".hhhsssssssshhh.","....uuuuuuuu....","...uuuuuuuuuu...","..suuuuuuuuuus..","..suuuuuuuuuus..","....ffffffff....","....fFffffFf....","....ff....ff....","....kk....kk...."],
     faun:["..n..........n..","..nn........nn..","...nnhhhhhhnn...","..hhhhhhhhhhhh..",".hhhhhhhhhhhhhh.",".hhhssssssssshhh",".hhsssssssssshh.","sshswessssweshss",".hhseesssseeshh.",".hhpssssssssphh.",".hhssssmmsssshh.","..hhsssssssshh..","....uuuuuuuu....","...uuuuuuuuuu...","..suuuuuuuuuus..","..suuuuuuuuuus..","....ffffffff....","....fFffffFf....","....ff....ff....","....kk....kk...."],
     palette:["....BBBBB..","..BBBBBBBB.",".BBRBBBYBBB","BBBBBBBBBCB","BB..BBBBBBB","BB..BBBBGB.","BBBBBBBBBB.",".BBBWBBPB..","..BBBBBB..."],
     tablet:["KKKKKKKKK..","KCCCCCCCK..","KCWWWWWCK.Y","KCWPPWWCKY.","KCWWPPWCY..","KCWWWWWYK..","KCCCCCCCK..","KKKKKKKKK.."],
@@ -458,9 +459,9 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     m.forEach((row,y)=>[...row].forEach((c,x)=>{if(PAL[c])r+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${PAL[c]}"/>`}));
     return `<svg viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`};
   document.querySelectorAll('[data-sprite]').forEach(el=>{const m=SPR[el.dataset.sprite];if(m)el.innerHTML=svgOf(m)});
-  {const em=document.querySelector('.emblem'),FW=28,FH=22,base=SPR.faun;
+  {const em=document.querySelector('.emblem'),FW=28,FH=22,base=SPR.faunAfro;
    const easel=["BBBBBBBBBB",...Array(8).fill("BWWWWWWWWB"),"BBBBBBBBBB","..B....B..","..B....B..",".B......B.",".B......B.","B........B"];
-   const heart=[".RR..RR.","RRRRRRRR","RRRRRRRR","RRRRRRRR",".RRRRRR.","..RRRR..","...RR...","........"];
+   const heart=["..RRR...","..RRR...","...R....",".RRRRR..","...R....","...R....","..R.R...",".R...R.."];
    const hp=[];heart.forEach((r,y)=>[...r].forEach((c,x)=>{if(c==='R')hp.push([x,y])}));
    const put=(g,spr,ox,oy)=>spr.forEach((r,y)=>[...r].forEach((c,x)=>{const X=x+ox,Y=y+oy;if(c!=='.'&&Y>=0&&Y<FH&&X>=0&&X<FW)g[Y][X]=c}));
    const dot=(g,x,y,c)=>{if(y>=0&&y<FH&&x>=0&&x<FW)g[y][x]=c};
@@ -468,7 +469,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
    const frame=({n=0,pose=0,jump=0,blink=false,spark=0,glow=false})=>{
      const g=Array.from({length:FH},()=>Array(FW).fill('.'));
      put(g,easel,18,4);
-     hp.slice(0,n).forEach(([x,y])=>dot(g,19+x,5+y,glow&&spark%2?'P':'R'));
+     hp.slice(0,n).forEach(([x,y])=>dot(g,19+x,5+y,glow&&spark%2?'R':'D'));
      const oy=2-jump,f=faun(blink).map(r=>r.split(''));
      if(pose){f[14][13]='.';f[15][13]='.'}
      put(g,f.map(r=>r.join('')),0,oy);
