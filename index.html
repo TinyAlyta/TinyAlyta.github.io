@@ -124,6 +124,7 @@ h1,h2,h3,h4,.dhead h3,.proj h4,.two h4,.sech h2,.contact h2,.pop h3{font-family:
 .sub{font:700 15px "Pixelify Sans",monospace;color:var(--mute);margin:22px 0 12px}
 .grid{display:grid;gap:clamp(10px,1.6vw,18px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g3.two-small{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g4{grid-template-columns:repeat(3,minmax(0,1fr))}
 figure{margin:0}
 .tile{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:zoom-in;box-shadow:0 0 0 1px var(--line);transition:transform .2s steps(3)}
@@ -250,7 +251,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node hold" data-n="digital" data-p="artist" data-popup="1" style="grid-row:2;grid-column:3"><span class="ic" data-sprite="tablet"></span><span class="lk" data-sprite="key"></span><span class="nm"><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></span><span class="st"><span data-t="en">On request</span><span data-t="ru">По запросу</span></span></button>
 
         <button class="node unlocked" data-n="characters" data-p="core" style="grid-row:3;grid-column:1"><span class="ic" data-sprite="face"></span><span class="nm"><span data-t="en">Characters</span><span data-t="ru">Персонажи</span></span><span class="st"><span data-t="en">3 works</span><span data-t="ru">3 работы</span></span></button>
-        <button class="node unlocked" data-n="scenes" data-p="core" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="house"></span><span class="nm"><span data-t="en">Scenes &amp; items</span><span data-t="ru">Сцены и предметы</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
+        <button class="node unlocked" data-n="scenes" data-p="core" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="house"></span><span class="nm"><span data-t="en">Scenes &amp; items</span><span data-t="ru">Сцены и предметы</span></span><span class="st"><span data-t="en">5 works</span><span data-t="ru">5 работ</span></span></button>
         <button class="node unlocked" data-n="game-jams" data-p="core" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">7 works</span><span data-t="ru">7 работ</span></span></button>
 
         <button class="node unlocked" data-n="commercial" data-p="characters scenes game-jams" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="case"></span><span class="nm"><span data-t="en">Real projects</span><span data-t="ru">Реальные проекты</span></span></button>
@@ -307,7 +308,6 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <div class="grid g3">
           <figure class="feature"><button class="tile" data-cap="Horror puzzle game, scene" data-capru="Хоррор-головоломка, сцена"><img src="img/door.webp" width="1600" height="1075" loading="lazy" alt="Pixel art dark door lit by a single bulb against a blue wall"></button></figure>
           <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-raven.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of a dark bird"></button><figcaption>256×171 px</figcaption></figure>
-          <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-hands.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of hands holding soil"></button><figcaption>256×171 px</figcaption></figure>
           <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-car.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of hands on a rusty old car"></button><figcaption>256×171 px</figcaption></figure>
         </div>
         <p class="sub"><span data-t="en">Items</span><span data-t="ru">Предметы</span></p>
