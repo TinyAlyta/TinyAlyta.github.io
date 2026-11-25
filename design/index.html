@@ -210,7 +210,9 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 .feat p{margin:0 0 10px;max-width:70ch}
 .feat .quote{color:var(--gold);font-style:italic}
 .chips2{display:flex;flex-wrap:wrap;gap:8px}
-.mapwrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;margin:6px 0 4px}
+.mapwrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;align-items:start;margin:6px 0 4px}
+.gddgal{display:grid;grid-template-columns:1fr;gap:14px;margin:8px 0 18px}.gddgal .wide{grid-column:1/-1}.gddgal figure{margin:0;max-width:820px}.gddgal .narrow{max-width:620px}.gddgal figcaption{font-size:13px;color:var(--mute);margin-top:6px}@media(max-width:640px){.gddgal{grid-template-columns:1fr}}
+.mapwrap .tile{max-width:520px}
 .smap{display:grid;grid-template-rows:repeat(8,30px);gap:8px;padding:12px;background:var(--panel2);border:2px solid var(--line)}
 .smap .row{display:flex;justify-content:center;gap:10px}
 .smap i{width:30px;height:30px;display:grid;place-items:center;font:700 13px "Pixelify Sans",monospace;font-style:normal;border:2px solid var(--rose);color:var(--ink);background:#14282a}
@@ -323,6 +325,12 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
           <h4>The Spectre Spectacle</h4>
           <p><span data-t="en">A narrative roguelite in a dark fairy-tale theatre, our diploma game in Unity for Steam. Ana and I are the two game designers and the glue of a team of 12: 5 programmers and 5 artists. I own level design, gameplay, enemies, UX, VFX and sound design, and QA, and co-manage the project. Vertical slice in January 2027, Steam release planned for 2027.</span><span data-t="ru">Нарративный roguelite в мрачном сказочном театре, наша дипломная игра на Unity для Steam. Мы с Аной — два геймдизайнера и связующее звено команды из 12 человек: 5 программистов и 5 художников. На мне левел-дизайн, геймплей, враги, UX, дизайн VFX и звука и QA, плюс совместное ведение проекта. Вертикальный срез в январе 2027, релиз в Steam запланирован на 2027.</span></p>
           <p class="quote"><span data-t="en">My standard for the GDD: clear and detailed enough that the team could finish the game if both designers disappeared.</span><span data-t="ru">Мой стандарт для GDD: документ должен быть настолько понятным и подробным, чтобы команда могла закончить игру, даже если оба дизайнера исчезнут.</span></p>
+          <p class="sub" style="margin-top:18px"><span data-t="en">Pages from the GDD</span><span data-t="ru">Страницы из GDD</span></p>
+          <div class="gddgal">
+            <figure class="wide"><button class="tile smooth light" data-cap="GDD, core loop: lobby and run" data-capru="GDD, основной цикл: лобби и забег"><img src="img/gdd-loop.webp" width="1162" height="342" loading="lazy" alt="Core loop diagram: the lobby between runs and the active run"></button><figcaption><span data-t="en">Core loop: lobby and run</span><span data-t="ru">Основной цикл: лобби и забег</span></figcaption></figure>
+            <figure class="narrow"><button class="tile smooth light" data-cap="GDD, two layers: wagon hub and stage" data-capru="GDD, два слоя: хаб-фургон и сцена"><img src="img/gdd-hub.webp" width="697" height="423" loading="lazy" alt="Diagram of the wagon hub outside the run and the stage inside it"></button><figcaption><span data-t="en">Two layers: wagon hub and stage</span><span data-t="ru">Два слоя: хаб-фургон и сцена</span></figcaption></figure>
+            <figure><button class="tile smooth light" data-cap="GDD, three merchant types" data-capru="GDD, три типа торговцев"><img src="img/gdd-merchants.webp" width="1162" height="434" loading="lazy" alt="Cards comparing the lobby, run-start and in-run merchants"></button><figcaption><span data-t="en">Three merchant types</span><span data-t="ru">Три типа торговцев</span></figcaption></figure>
+          </div>
           <div class="chips2"><button class="go" data-goto="level">▶ <span data-t="en">Scene map &amp; rooms</span><span data-t="ru">Карта и комнаты</span></button><button class="go" data-goto="systems">▶ <span data-t="en">Enemies &amp; mini-bosses</span><span data-t="ru">Враги и мини-боссы</span></button><button class="go" data-goto="ux">▶ <span data-t="en">Dialogue &amp; save systems</span><span data-t="ru">Диалоги и сохранения</span></button><button class="go" data-goto="org">▶ <span data-t="en">Organization tables</span><span data-t="ru">Таблицы организации</span></button></div>
         </div>
         <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">Pick a skill in the tree above to see the work</span><span data-t="ru">Выберите навык в древе выше, чтобы увидеть работы</span></p>
@@ -377,12 +385,12 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
           <div class="tags"><span data-t="en">Diploma project</span><span data-t="ru">Дипломный проект</span><span data-t="en">Rewritten from zero</span><span data-t="ru">Переписано с нуля</span><span>Figma</span><span>Excel</span></div>
           <p class="lede"><span data-t="en">I rewrote the level design section of the GDD from zero: hub, map, rooms, encounters, rewards and traps. Arena layouts are built in Figma, probabilities and numbers in Excel.</span><span data-t="ru">Я переписала раздел левел-дизайна в GDD с нуля: хаб, карта, комнаты, энкаунтеры, награды и ловушки. Раскладки арен собраны в Figma, вероятности и цифры посчитаны в Excel.</span></p>
           <div class="mapwrap">
-            <div class="smap" id="smap" aria-label="Example scene map"></div>
+            <figure style="margin:0"><button class="tile smooth light" data-cap="GDD, scene map at a glance" data-capru="GDD, карта сцены"><img src="img/gdd-scene-map.webp" width="1162" height="995" loading="lazy" alt="GDD page: branching scene map with 8 rows, legend and one possible route"></button></figure>
             <div>
               <ul class="ticks" data-t="en"><li>Procedural 8 × 4 grid, the player always visits 8 nodes</li><li>Row 1 is always a Fight that starts with the weapon-choice Merchant, row 8 is always the Final Fight</li><li>Rows 2 to 7 are chaotic: 1 to 4 nodes, random links, random types</li><li>Exactly one Shop per map, placed on a busy node; Treasure is a random type at about 15%</li><li>One Fight node = 4 to 5 rooms, each act has its own pool of 8 to 10 arenas</li></ul>
               <ul class="ticks" data-t="ru"><li>Процедурная сетка 8 × 4, игрок всегда проходит 8 узлов</li><li>Первый ряд — всегда бой, который начинается с Торговца и выбора оружия, восьмой — всегда финальный бой</li><li>Ряды со 2 по 7 хаотичные: от 1 до 4 узлов, случайные связи и типы</li><li>Ровно один магазин на карту, на самом нагруженном узле; сокровище — случайный тип, примерно 15%</li><li>Один узел боя — 4–5 комнат, у каждого акта свой пул из 8–10 арен</li></ul>
-              <p class="legend2" style="margin-bottom:4px"><span data-t="en">Left: an example map built by these rules.</span><span data-t="ru">Слева — пример карты, собранной по этим правилам.</span></p>
-              <p class="legend2"><b>F</b> <span data-t="en">Fight</span><span data-t="ru">Бой</span> <b>H</b> <span data-t="en">More health</span><span data-t="ru">Здоровье</span> <b>B</b> <span data-t="en">More buttons</span><span data-t="ru">Пуговицы</span> <b>S</b> <span data-t="en">Shop</span><span data-t="ru">Магазин</span> <b>T</b> <span data-t="en">Treasure</span><span data-t="ru">Сокровище</span></p>
+              <p class="legend2" style="margin-bottom:4px"><span data-t="en">Left: the scene map page from the GDD.</span><span data-t="ru">Слева — страница с картой сцены из GDD.</span></p>
+              
             </div>
           </div>
           <p class="note" style="margin-top:14px"><span data-t="en">Rooms are stage sets with no doors. The player stays in place and pulls a lever, the scenery changes around them, and enemies are lowered in on strings like props.</span><span data-t="ru">Комнаты — это театральные декорации без дверей. Игрок остаётся на месте и дёргает рычаг, декорации меняются вокруг него, а враги спускаются на верёвках, как реквизит.</span></p>
@@ -620,14 +628,15 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
      if(cur&&!done)dot(g,Math.min(cx,25),cy,'W');
      if(done){dot(g,25,6,'G');dot(g,24,7,'G');dot(g,23,6,'G')}
      dot(g,22,17,'K');dot(g,21,18,'K');dot(g,22,18,'K');dot(g,23,18,'K');
-     const f=faun(blink).map(r=>r.split(''));f[14][13]='.';f[15][13]='.';f[14][2]='.';f[15][2]='.';
+     const f=faun(blink).map(r=>r.split(''));
      put(g,f.map(r=>r.join('')),0,1+nod);
      for(let x=0;x<FW;x++){dot(g,x,19,'B');dot(g,x,20,'b')}
      dot(g,2,21,'b');dot(g,25,21,'b');
-     for(let x=12;x<=19;x++)dot(g,x,18,'L');
-     const k1=tap===1?13:tap===2?16:14,k2=tap===1?17:tap===2?14:18;
-     dot(g,k1,18,'W');dot(g,k2,18,'W');
-     dot(g,13,16+nod,'s');dot(g,k1,17,'s');dot(g,3,16+nod,'s');dot(g,4,17,'s');dot(g,k2,17,'s');
+     for(let x=3;x<=12;x++)dot(g,x,18,'L');
+     const lD=tap===1,rD=tap===2;
+     dot(g,3,17,'s');dot(g,12,17,'s');
+     if(lD){dot(g,5,17,'W');dot(g,5,18,'s')}else dot(g,4,17,'s');
+     if(rD){dot(g,10,17,'W');dot(g,10,18,'s')}else dot(g,11,17,'s');
      return svgOf(g.map(r=>r.join('')))};
    function faun(blink){return base.map(r=>blink?r.replace(/we/g,'ss'):r)}
    const seq=[];
