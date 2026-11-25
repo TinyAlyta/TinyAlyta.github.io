@@ -265,7 +265,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <svg id="edges" aria-hidden="true"></svg>
         <button class="node root unlocked" data-n="artist" style="grid-row:1;grid-column:2"><span class="ic" data-sprite="palette"></span><span class="nm"><span data-t="en">Artist</span><span data-t="ru">Художница</span></span><span class="st"><span data-t="en">Base class</span><span data-t="ru">Базовый класс</span></span></button>
 
-        <button class="node unlocked" data-n="pixel" data-p="artist" style="grid-row:2;grid-column:1"><span class="ic" data-sprite="artist"></span><span class="nm"><span data-t="en">Pixel artist</span><span data-t="ru">Пиксель-художница</span></span><span class="st"><span data-t="en">Separate site</span><span data-t="ru">Отдельный сайт</span></span></button>
+        <button class="node unlocked" data-n="pixel" data-href="../" data-p="artist" style="grid-row:2;grid-column:1"><span class="ic" data-sprite="artist"></span><span class="nm"><span data-t="en">Pixel artist</span><span data-t="ru">Пиксель-художница</span></span><span class="st"><span data-t="en">Separate site</span><span data-t="ru">Отдельный сайт</span></span></button>
         <button class="node unlocked" data-n="digital" data-p="artist" style="grid-row:2;grid-column:2"><span class="ic" data-sprite="tablet"></span><span class="nm"><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></span><span class="st"><span data-t="en">Main focus</span><span data-t="ru">Главный фокус</span></span></button>
         <button class="node unlocked" data-n="three-d" data-p="artist" style="grid-row:2;grid-column:3"><span class="ic" data-sprite="cube"></span><span class="nm"><span data-t="en">3D &amp; environments</span><span data-t="ru">3D и окружение</span></span><span class="st"><span data-t="en">5 works</span><span data-t="ru">5 работ</span></span></button>
 
@@ -594,7 +594,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   document.getElementById('popClose').addEventListener('click',popShut);
   pop.addEventListener('click',e=>{if(e.target===pop)popShut()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pop.classList.contains('on'))popShut()});
-  nodes.forEach(n=>n.addEventListener('click',()=>{if(n.dataset.popup){popFrom=n;pop.classList.add('on');document.getElementById('popClose').focus();return}const id=n.dataset.n;if(location.hash!=='#'+id)location.hash=id;else select(id,true)}));
+  nodes.forEach(n=>n.addEventListener('click',()=>{if(n.dataset.href){location.href=n.dataset.href;return}if(n.dataset.popup){popFrom=n;pop.classList.add('on');document.getElementById('popClose').focus();return}const id=n.dataset.n;if(location.hash!=='#'+id)location.hash=id;else select(id,true)}));
   document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.goto}));
   const route=scroll=>{const h=location.hash.slice(1);if(ids.includes(h))select(h,scroll);else if(!dets.some(d=>!d.hidden))select('artist',false)};
   addEventListener('hashchange',()=>route(true));
