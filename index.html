@@ -144,7 +144,7 @@ figcaption{font-size:13.5px;color:var(--mute);padding:8px 2px 0}
 .ticks li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:2px;background:var(--rose)}
 .two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px clamp(24px,4vw,48px)}
 .two h4{font:700 17px "Pixelify Sans",monospace;margin:0 0 6px;color:var(--rose2)}
-.quest{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.quest{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .quest div{padding:16px;border:2px solid var(--line);background:var(--panel2)}
 .quest b{display:block;font:700 17px "Pixelify Sans",monospace;margin-bottom:4px}
 .quest span{color:var(--mute);font-size:15px}
@@ -249,7 +249,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node unlocked" data-n="scenes" data-p="core" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="house"></span><span class="nm"><span data-t="en">Scenes &amp; items</span><span data-t="ru">Сцены и предметы</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
         <button class="node unlocked" data-n="game-jams" data-p="core" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
 
-        <button class="node unlocked" data-n="commercial" data-p="characters scenes" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="case"></span><span class="nm"><span data-t="en">Real projects</span><span data-t="ru">Реальные проекты</span></span><span class="st"><span data-t="en">Steam release</span><span data-t="ru">Релиз в Steam</span></span></button>
+        <button class="node unlocked" data-n="commercial" data-p="characters scenes game-jams" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="case"></span><span class="nm"><span data-t="en">Real projects</span><span data-t="ru">Реальные проекты</span></span></button>
         <button class="node locked" data-n="ai" data-p="characters core" data-via="scenes" style="grid-row:4;grid-column:2"><span class="ic" data-sprite="chip"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">AI workflow</span><span data-t="ru">Работа с нейросетями</span></span><span class="bar2"><b></b></span></button>
         <button class="node locked" data-n="drawing" data-p="game-jams" style="grid-row:4;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Drawing mastery</span><span data-t="ru">Мастерство рисунка</span></span><span class="bar2"><b></b></span></button>
       </div>
@@ -343,6 +343,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <div class="quest">
           <div><b>Iron Frontiers</b><span><span data-t="en">Freelance pixel artist, character portraits. Released on Steam.</span><span data-t="ru">Пиксель-художница на фрилансе, портреты персонажей. Релиз в Steam.</span></span><br><button class="go" data-goto="characters">▶ <span data-t="en">See the portraits</span><span data-t="ru">Смотреть портреты</span></button></div>
           <div><b><span data-t="en">Horror puzzle game</span><span data-t="ru">Хоррор-головоломка</span></b><span><span data-t="en">Game designer, plus some of the scenes and props.</span><span data-t="ru">Геймдизайнер, а также некоторые сцены и пропсы.</span></span><br><button class="go" data-goto="scenes">▶ <span data-t="en">See the scenes</span><span data-t="ru">Смотреть сцены</span></button></div>
+          <div><b><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></b><span><span data-t="en">Three jams of 2–3 days each, in 2024 and 2025. Artist and game designer: storefronts, props and game design.</span><span data-t="ru">Три джема по 2–3 дня, в 2024 и 2025 годах. Художница и геймдизайнер: витрины, пропсы и геймдизайн.</span></span><br><button class="go" data-goto="game-jams">▶ <span data-t="en">See the jams</span><span data-t="ru">Смотреть джемы</span></button></div>
         </div>
       </article>
 
