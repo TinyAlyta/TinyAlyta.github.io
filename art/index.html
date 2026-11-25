@@ -155,6 +155,7 @@ figcaption{font-size:13.5px;color:var(--mute);padding:8px 2px 0}
 .quest div{padding:16px;border:2px solid var(--line);background:var(--panel2)}
 .quest b{display:block;font:700 17px "Pixelify Sans",monospace;margin-bottom:4px}
 .quest span{color:var(--mute);font-size:15px}
+.chips2{display:flex;flex-wrap:wrap;gap:10px}.chips2 .go{margin-top:0}
 .go{display:inline-flex;align-items:center;gap:8px;margin-top:10px;min-height:40px;padding:6px 12px;border:2px solid var(--rose);background:none;color:var(--rose2);font:700 14px "Pixelify Sans",monospace;cursor:pointer}
 .go:hover,.go:focus-visible{background:var(--rose);color:#1a0d14;outline:none}
 .inspo{margin:20px 0 0;padding-left:14px;border-left:3px solid var(--gold);color:var(--mute)}
@@ -306,12 +307,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="digital" hidden>
         <div class="dhead"><span class="ic" data-sprite="tablet"></span><div><span class="label on"><span data-t="en">Main branch</span><span data-t="ru">Основная ветка</span></span><h3><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></h3></div></div>
-        <div class="grid g3">
-          <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/illu-hood.webp" width="1377" height="2200" loading="lazy" alt="Illustration of a woman in a red hood looking up at ruined buildings in the snow"></button></figure>
-          <figure><button class="tile mat smooth" data-cap="Ink, watercolour" data-capru="Тушь, акварель"><img src="img/illu-balcony.webp" width="1201" height="1280" loading="lazy" alt="Ink and watercolour illustration of a woman at a balustrade with a red sun"></button></figure>
-          <figure><button class="tile mat smooth" data-cap="Fan art, Resident Evil 4" data-capru="Фан-арт, Resident Evil 4"><img src="img/re4-fanart.webp" width="1736" height="2200" loading="lazy" alt="Resident Evil 4 fan art"></button></figure>
-        </div>
-        <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">More in Illustration, Fan art and Range &amp; process</span><span data-t="ru">Больше в узлах «Иллюстрация», «Фан-арт» и «Диапазон и процесс»</span></p>
+        <p class="lede"><span data-t="en">Choose one of the skills below to see examples of my work in a particular style or format.</span><span data-t="ru">Выберите один из навыков ниже, чтобы посмотреть примеры моих работ в том или ином стиле и формате.</span></p>
+        <div class="chips2"><button class="go" data-goto="illustration">▶ <span data-t="en">Illustration</span><span data-t="ru">Иллюстрация</span></button><button class="go" data-goto="faces">▶ <span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></button><button class="go" data-goto="concepts">▶ <span data-t="en">Concept art</span><span data-t="ru">Концепт-арт</span></button><button class="go" data-goto="vn">▶ <span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></button><button class="go" data-goto="fan-art">▶ <span data-t="en">Fan art</span><span data-t="ru">Фан-арт</span></button><button class="go" data-goto="process">▶ <span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></button><button class="go" data-goto="anatomy">▶ <span data-t="en">Anatomy</span><span data-t="ru">Анатомия</span></button><button class="go" data-goto="styles">▶ <span data-t="en">Working with style</span><span data-t="ru">Работа со стилем</span></button></div>
       </article>
 
       <article class="det pxbox" data-d="illustration" hidden>
