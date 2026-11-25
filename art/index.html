@@ -123,7 +123,7 @@ h1,h2,h3,h4,.dhead h3,.proj h4,.two h4,.sech h2,.contact h2,.pop h3{font-family:
 .proj+.proj{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .proj h4{font:700 20px "Pixelify Sans",monospace;margin:0 0 8px}
 .sub{font:700 15px "Pixelify Sans",monospace;color:var(--mute);margin:22px 0 12px}
-.vnsprite{margin:0 0 8px}.vnvid{margin:0;max-width:420px}.vnvid video{display:block;width:100%;height:auto;background:#f4efe6;box-shadow:0 0 0 1px var(--line)}
+.vnsprite{margin:0 0 8px}
 .grid{display:grid;gap:clamp(10px,1.6vw,18px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g3.two-small{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -273,10 +273,10 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node unlocked" data-n="process" data-p="digital" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="nm"><span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></span><span class="st"><span data-t="en">Cartoon and realism</span><span data-t="ru">Мульт и реализм</span></span></button>
 
         <button class="node unlocked" data-n="faces" data-p="illustration" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="masks"></span><span class="nm"><span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></span><span class="st"><span data-t="en">4 works</span><span data-t="ru">4 работы</span></span></button>
-        <button class="node unlocked" data-n="vn" data-p="faces" style="grid-row:5;grid-column:1"><span class="ic" data-sprite="book"></span><span class="nm"><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></span><span class="st"><span data-t="en">Character and process</span><span data-t="ru">Персонаж и процесс</span></span></button>
+        <button class="node unlocked" data-n="vn" data-p="faces" style="grid-row:5;grid-column:1"><span class="ic" data-sprite="book"></span><span class="nm"><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></span><span class="st"><span data-t="en">Character sprite</span><span data-t="ru">Спрайт персонажа</span></span></button>
         <button class="node locked" data-n="cover" data-p="illustration fan-art" style="grid-row:4;grid-column:2"><span class="ic" data-sprite="scroll"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Book cover</span><span data-t="ru">Обложка книги</span></span><span class="bar2"><b></b></span></button>
         <button class="node unlocked" data-n="anatomy" data-p="process" style="grid-row:4;grid-column:3"><span class="ic" data-sprite="face"></span><span class="nm"><span data-t="en">Anatomy</span><span data-t="ru">Анатомия</span></span><span class="st"><span data-t="en">Gesture sketches</span><span data-t="ru">Быстрые наброски</span></span></button>
-        <button class="node unlocked" data-n="styles" data-p="anatomy" style="grid-row:5;grid-column:3"><span class="ic" data-sprite="nib"></span><span class="nm"><span data-t="en">Style studies</span><span data-t="ru">Стилевые штудии</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
+        <button class="node unlocked" data-n="styles" data-p="anatomy" style="grid-row:5;grid-column:3"><span class="ic" data-sprite="nib"></span><span class="nm"><span data-t="en">Working with style</span><span data-t="ru">Работа со стилем</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
       </div>
     </div>
     <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are projects in progress or under NDA.</span><span data-t="ru">Светящиеся навыки открыты, закрытые — проекты в работе или под NDA.</span></p>
@@ -306,8 +306,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       <article class="det pxbox" data-d="digital" hidden>
         <div class="dhead"><span class="ic" data-sprite="tablet"></span><div><span class="label on"><span data-t="en">Main branch</span><span data-t="ru">Основная ветка</span></span><h3><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></h3></div></div>
         <div class="grid g3">
-          <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/original-ruins.webp" width="1377" height="2200" loading="lazy" alt="Illustration of a woman in a red hood looking up at ruined buildings in the snow"></button></figure>
-          <figure><button class="tile mat smooth" data-cap="Ink, watercolour" data-capru="Тушь, акварель"><img src="img/elf-ink.webp" width="1201" height="1280" loading="lazy" alt="Ink and watercolour illustration of a woman at a balustrade with a red sun"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/illu-hood.webp" width="1377" height="2200" loading="lazy" alt="Illustration of a woman in a red hood looking up at ruined buildings in the snow"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Ink, watercolour" data-capru="Тушь, акварель"><img src="img/illu-balcony.webp" width="1201" height="1280" loading="lazy" alt="Ink and watercolour illustration of a woman at a balustrade with a red sun"></button></figure>
           <figure><button class="tile mat smooth" data-cap="Fan art, Resident Evil 4" data-capru="Фан-арт, Resident Evil 4"><img src="img/re4-fanart.webp" width="1736" height="2200" loading="lazy" alt="Resident Evil 4 fan art"></button></figure>
         </div>
         <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">More in Illustration, Fan art and Range &amp; process</span><span data-t="ru">Больше в узлах «Иллюстрация», «Фан-арт» и «Диапазон и процесс»</span></p>
@@ -316,8 +316,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       <article class="det pxbox" data-d="illustration" hidden>
         <div class="dhead"><span class="ic" data-sprite="face"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Illustration</span><span data-t="ru">Иллюстрация</span></h3></div></div>
         <div class="grid g3 two-small">
-          <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/original-ruins.webp" width="1377" height="2200" loading="lazy" alt="Illustration of a woman in a red hood looking up at ruined buildings in the snow"></button><figcaption><span data-t="en">Original illustration</span><span data-t="ru">Оригинальная иллюстрация</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Ink, watercolour" data-capru="Тушь, акварель"><img src="img/elf-ink.webp" width="1201" height="1280" loading="lazy" alt="Ink and watercolour illustration of a woman at a balustrade with a red sun"></button><figcaption><span data-t="en">Ink, watercolour</span><span data-t="ru">Тушь, акварель</span></figcaption></figure>
+          <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/illu-hood.webp" width="1377" height="2200" loading="lazy" alt="Illustration of a woman in a red hood looking up at ruined buildings in the snow"></button><figcaption><span data-t="en">Original illustration</span><span data-t="ru">Оригинальная иллюстрация</span></figcaption></figure>
+          <figure><button class="tile mat smooth" data-cap="Ink, watercolour" data-capru="Тушь, акварель"><img src="img/illu-balcony.webp" width="1201" height="1280" loading="lazy" alt="Ink and watercolour illustration of a woman at a balustrade with a red sun"></button><figcaption><span data-t="en">Ink, watercolour</span><span data-t="ru">Тушь, акварель</span></figcaption></figure>
           <figure><button class="tile mat smooth" data-cap="Original illustration" data-capru="Оригинальная иллюстрация"><img src="img/illu-halo.webp" width="831" height="1101" loading="lazy" alt="Painted illustration of a pale-haired woman wrapped in dark fabric with a golden halo"></button><figcaption><span data-t="en">Original illustration</span><span data-t="ru">Оригинальная иллюстрация</span></figcaption></figure>
         </div>
       </article>
@@ -333,7 +333,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="process" hidden>
         <div class="dhead"><span class="ic" data-sprite="brush"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></h3></div></div>
-        <p class="lede"><span data-t="en">Same hand, two registers: a cartoon matched to an existing show style, and realism in ink and watercolour. Below is how both were built.</span><span data-t="ru">Одна рука, два регистра: мультяшный стиль под существующий сериал и реализм тушью и акварелью. Ниже — как строились обе работы.</span></p>
+        <p class="lede"><span data-t="en">Pipeline</span><span data-t="ru">Пайплайн</span></p>
         <p class="sub"><span data-t="en">Cartoon</span><span data-t="ru">Мультяшный стиль</span></p>
         <div class="steps">
           <figure><button class="tile mat smooth" data-cap="Cartoon, 01 construction" data-capru="Мульт, 01 построение"><img src="img/proc-cartoon-1.webp" width="675" height="899" loading="lazy" alt="Construction sketch"></button><figcaption>01 <span data-t="en">Construction</span><span data-t="ru">Построение</span></figcaption></figure>
@@ -354,15 +354,16 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="three-d" hidden>
         <div class="dhead"><span class="ic" data-sprite="cube"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">3D &amp; environments</span><span data-t="ru">3D и окружение</span></h3></div></div>
-        <p class="lede"><span data-t="en">The basics of 3D for games: modelling in Blender and Maya, texturing in Substance Painter.</span><span data-t="ru">База 3D для игр: моделирование в Blender и Maya, текстурирование в Substance Painter.</span></p>
+        <p class="lede"><span data-t="en">The basics of 3D for games: modelling in Blender, animation in Maya, texturing in Substance Painter.</span><span data-t="ru">База 3D для игр: моделирование в Blender, анимирование в Maya, текстурирование в Substance Painter.</span></p>
         <div class="grid g3 two-small">
           <figure><button class="tile smooth" data-cap="Weapon texturing, Substance Painter" data-capru="Текстурирование оружия, Substance Painter"><img src="img/weapon-1.webp" width="1910" height="1030" loading="lazy" alt="Textured stylised gun in Substance Painter"></button></figure>
           <figure><button class="tile smooth" data-cap="Weapon texturing, Substance Painter" data-capru="Текстурирование оружия, Substance Painter"><img src="img/weapon-2.webp" width="1910" height="1030" loading="lazy" alt="Textured stylised gun, another angle"></button></figure>
         </div>
         <div class="proj">
           <h4><span data-t="en">Environment in Unreal Engine</span><span data-t="ru">Окружение в Unreal Engine</span></h4>
-          <p class="lede"><span data-t="en">A modular environment built from a photo reference of an abandoned hotel, with night lighting.</span><span data-t="ru">Модульное окружение по фотореференсу заброшенного отеля, с ночным освещением.</span></p>
-          <div class="grid g3">
+          <p class="lede"><span data-t="en">A modular environment built from a photo reference of an abandoned hotel.</span><span data-t="ru">Модульное окружение по фотореференсу заброшенного отеля.</span></p>
+          <div class="grid g3 two-small">
+            <figure><button class="tile smooth" data-cap="Photo reference" data-capru="Фотореференс"><img src="img/ue-ref.webp" width="1080" height="719" loading="lazy" alt="Photo of an abandoned concrete hotel in a pine forest"></button><figcaption><span data-t="en">Reference</span><span data-t="ru">Референс</span></figcaption></figure>
             <figure><button class="tile smooth" data-cap="Environment in Unreal Engine" data-capru="Окружение в Unreal Engine"><img src="img/ue-env-1.webp" width="1905" height="1030" loading="lazy" alt="Night render of a modular hotel building in Unreal Engine"></button></figure>
             <figure><button class="tile smooth" data-cap="Environment in Unreal Engine" data-capru="Окружение в Unreal Engine"><img src="img/ue-env-2.webp" width="1904" height="1030" loading="lazy" alt="Close night view of the hotel building"></button></figure>
             <figure><button class="tile smooth" data-cap="Environment in Unreal Engine, editor view" data-capru="Окружение в Unreal Engine, вид в редакторе"><img src="img/ue-env-editor.webp" width="1962" height="1030" loading="lazy" alt="Unreal Engine editor with the hotel environment"></button></figure>
@@ -372,22 +373,19 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="faces" hidden>
         <div class="dhead"><span class="ic" data-sprite="masks"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></h3></div></div>
-        <p class="lede"><span data-t="en">Different faces, features and types, and the emotion that makes each one read as a person: calm, mischief, pain, quiet confidence.</span><span data-t="ru">Разные лица, черты и типажи и эмоция, из-за которой каждое читается как живой человек: спокойствие, озорство, боль, тихая уверенность.</span></p>
+        <p class="lede"><span data-t="en">Different faces, features, types and emotions.</span><span data-t="ru">Разные лица, черты, типажи и эмоции.</span></p>
         <div class="grid g3 two-small">
-          <figure><button class="tile mat smooth" data-cap="Faces, line art" data-capru="Лица, лайн"><img src="img/face-1.webp" width="1649" height="2200" loading="lazy" alt="Ink line drawing of a girl with braids holding a wand"></button><figcaption><span data-t="en">Line art</span><span data-t="ru">Лайн</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Faces, nine characters, nine emotions" data-capru="Лица, девять персонажей и девять эмоций"><img src="img/face-2.webp" width="1486" height="2200" loading="lazy" alt="Group illustration of nine girls in school uniforms, each with a different expression"></button><figcaption><span data-t="en">Nine characters, nine emotions</span><span data-t="ru">Девять персонажей, девять эмоций</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Faces, line art" data-capru="Лица, лайн"><img src="img/face-3.webp" width="1649" height="2200" loading="lazy" alt="Ink portrait of a young man with curly hair"></button><figcaption><span data-t="en">Line art</span><span data-t="ru">Лайн</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Faces, dark illustration" data-capru="Лица, мрачная иллюстрация"><img src="img/face-4.webp" width="1416" height="1888" loading="lazy" alt="Dark illustration of a woman looking upward with blood on her face and neck"></button><figcaption><span data-t="en">Dark illustration</span><span data-t="ru">Мрачная иллюстрация</span></figcaption></figure>
+          <figure><button class="tile mat smooth" data-cap="Faces, line art" data-capru="Лица, лайн"><img src="img/face-1.webp" width="1649" height="2200" loading="lazy" alt="Ink line drawing of a girl with braids holding a wand"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Faces, nine characters, nine emotions" data-capru="Лица, девять персонажей и девять эмоций"><img src="img/face-2.webp" width="1486" height="2200" loading="lazy" alt="Group illustration of nine girls in school uniforms, each with a different expression"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Faces, line art" data-capru="Лица, лайн"><img src="img/face-3.webp" width="1649" height="2200" loading="lazy" alt="Ink portrait of a young man with curly hair"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Faces, dark illustration" data-capru="Лица, мрачная иллюстрация"><img src="img/face-4.webp" width="1416" height="1888" loading="lazy" alt="Dark illustration of a woman looking upward with blood on her face and neck"></button></figure>
         </div>
       </article>
 
       <article class="det pxbox" data-d="vn" hidden>
         <div class="dhead"><span class="ic" data-sprite="book"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></h3></div></div>
-        <p class="lede"><span data-t="en">An example of a visual novel character: a semi-realistic sprite in two emotions, and the whole process from sketch to final render. The commercial project I draw for is under NDA, so its art will appear here after release.</span><span data-t="ru">Пример персонажа для визуальной новеллы: полуреалистичный спрайт в двух эмоциях и весь процесс от скетча до финального рендера. Коммерческий проект, на котором я работаю, под NDA, поэтому его арты появятся здесь после релиза.</span></p>
-        <p class="sub"><span data-t="en">Character sprite, two emotions</span><span data-t="ru">Спрайт персонажа, две эмоции</span></p>
+        <p class="lede"><span data-t="en">An example of a visual novel character: a semi-realistic sprite in two emotions.</span><span data-t="ru">Пример персонажа для визуальной новеллы: полуреалистичный спрайт в двух эмоциях.</span></p>
         <figure class="vnsprite"><button class="tile mat smooth" data-cap="Visual novel character, two emotions" data-capru="Персонаж визуальной новеллы, две эмоции"><img src="img/vn-sprite.webp" width="4000" height="3000" loading="lazy" alt="Semi-realistic visual novel character sprite shown in two emotions"></button></figure>
-        <p class="sub"><span data-t="en">Process</span><span data-t="ru">Процесс</span></p>
-        <figure class="vnvid"><video src="img/vn-process.mp4" poster="img/vn-process-poster.jpg" width="720" height="960" controls muted loop playsinline preload="none"></video><figcaption><span data-t="en">Sketch, base colours, rendering</span><span data-t="ru">Скетч, базовые цвета, рендер</span></figcaption></figure>
       </article>
 
       <article class="det pxbox" data-d="anatomy" hidden>
@@ -402,15 +400,15 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       </article>
 
       <article class="det pxbox" data-d="styles" hidden>
-        <div class="dhead"><span class="ic" data-sprite="nib"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Style studies</span><span data-t="ru">Стилевые штудии</span></h3></div></div>
-        <p class="lede"><span data-t="en">Practice in other techniques: I study the styles of anime, manga and animated series by copying them, then bring what I learn into my own work.</span><span data-t="ru">Практика в чужих техниках: изучаю стили аниме, манги и мультсериалов через копирование и переношу находки в свои работы.</span></p>
+        <div class="dhead"><span class="ic" data-sprite="nib"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Working with style</span><span data-t="ru">Работа со стилем</span></h3></div></div>
+        <p class="lede"><span data-t="en">I study and practise different drawing styles, from anime and manga to animated series, and different techniques too.</span><span data-t="ru">Изучаю и практикую разные стили рисования: аниме, мангу, мультсериалы, а также разные техники.</span></p>
         <div class="grid g3 two-small">
-          <figure><button class="tile mat smooth" data-cap="Style study, Berserk" data-capru="Стилевая штудия, Berserk"><img src="img/style-1.webp" width="1649" height="2200" loading="lazy" alt="Ink style study of two Berserk characters"></button><figcaption>Berserk</figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Style study, manga ink" data-capru="Стилевая штудия, манга-тушь"><img src="img/style-2.webp" width="1649" height="2200" loading="lazy" alt="Ink drawing of a face covered by two hands"></button><figcaption><span data-t="en">Manga ink</span><span data-t="ru">Манга-тушь</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Style study, Castlevania" data-capru="Стилевая штудия, Castlevania"><img src="img/style-3.webp" width="1649" height="2200" loading="lazy" alt="Sketch study in the style of the Castlevania animated series"></button><figcaption>Castlevania</figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Style study, Evangelion" data-capru="Стилевая штудия, Evangelion"><img src="img/style-4.webp" width="1649" height="2200" loading="lazy" alt="Ink style study of three Evangelion characters"></button><figcaption>Evangelion</figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Style study, animation sketch" data-capru="Стилевая штудия, анимационный скетч"><img src="img/style-5.webp" width="1920" height="1920" loading="lazy" alt="Sketch of a mouse with a crown casting a spell"></button><figcaption><span data-t="en">Animation-style sketch</span><span data-t="ru">Скетч в анимационном стиле</span></figcaption></figure>
-          <figure><button class="tile mat smooth" data-cap="Style study, Gravity Falls" data-capru="Стилевая штудия, Gravity Falls"><img src="img/gf-fanart.webp" width="1650" height="2200" loading="lazy" alt="Drawing in the style of Gravity Falls"></button><figcaption>Gravity Falls</figcaption></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, Berserk" data-capru="Стилевая штудия, Berserk"><img src="img/style-1.webp" width="1649" height="2200" loading="lazy" alt="Ink style study of two Berserk characters"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, animation sketch" data-capru="Стилевая штудия, анимационный скетч"><img src="img/style-5.webp" width="1920" height="1920" loading="lazy" alt="Sketch of a mouse with a crown casting a spell"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, manga ink" data-capru="Стилевая штудия, манга-тушь"><img src="img/style-2.webp" width="1649" height="2200" loading="lazy" alt="Ink drawing of a face covered by two hands"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, Gravity Falls" data-capru="Стилевая штудия, Gravity Falls"><img src="img/gf-fanart.webp" width="1650" height="2200" loading="lazy" alt="Drawing in the style of Gravity Falls"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, Castlevania" data-capru="Стилевая штудия, Castlevania"><img src="img/style-3.webp" width="1649" height="2200" loading="lazy" alt="Sketch study in the style of the Castlevania animated series"></button></figure>
+          <figure><button class="tile mat smooth" data-cap="Style study, Evangelion" data-capru="Стилевая штудия, Evangelion"><img src="img/style-4.webp" width="1649" height="2200" loading="lazy" alt="Ink style study of three Evangelion characters"></button></figure>
         </div>
       </article>
 
@@ -436,8 +434,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     <div class="sech"><h2 id="achh"><span data-t="en">Achievements</span><span data-t="ru">Достижения</span></h2></div>
     <div class="ach">
       <div><span data-sprite="sword"></span><span><b><span data-t="en">Work on real projects</span><span data-t="ru">Работа на реальных проектах</span></b></span></div>
-      <div><span data-sprite="palette"></span><span><b><span data-t="en">Two registers</span><span data-t="ru">Два регистра</span></b><span><span data-t="en">Cartoon and realism</span><span data-t="ru">Мульт и реализм</span></span></span></div>
-      <div><span data-sprite="heart"></span><span><b><span data-t="en">Commissions open</span><span data-t="ru">Заказы открыты</span></b><span><span data-t="en">Own art community since 2026</span><span data-t="ru">Своя арт-группа с 2026</span></span></span></div>
+      <div><span data-sprite="palette"></span><span><b><span data-t="en">Adaptability</span><span data-t="ru">Адаптивность</span></b><span><span data-t="en">Cartoon and realism</span><span data-t="ru">Мульт и реализм</span></span></span></div>
+      <div><span data-sprite="heart"></span><span><b><span data-t="en">My own fan art group</span><span data-t="ru">Своя группа с фан-артами</span></b><span><span data-t="en">Small, I draw there for fun</span><span data-t="ru">Небольшая, рисую для удовольствия</span></span></span></div>
       <div><span data-sprite="star"></span><span><b><span data-t="en">Self-taught</span><span data-t="ru">Самоучка</span></b><span><span data-t="en">Plus completed courses</span><span data-t="ru">Плюс пройденные курсы</span></span></span></div>
     </div>
   </section>
