@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aleksandra Afanaseva — Pixel Art</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0a0c15;--panel:#111527;--panel2:#161b31;--ink:#ece7e1;--mute:#a29dac;--line:#262c45;
+  --rose:#ec9cab;--rose2:#ffc7d0;--sky:#0b1e3c;--sky2:#0f2549;--gold:#ffd36b;--lock:#5b6078}
+:root[data-lang=en] [data-t=ru],:root[data-lang=ru] [data-t=en]{display:none!important}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Archivo,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+h1,h2,h3,.px{font-family:"Pixelify Sans",ui-monospace,monospace;font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:max(5vw,16px)}
+.pxbox{background:var(--panel);border:2px solid var(--line);box-shadow:0 0 0 2px #05070d,6px 6px 0 #05070d}
+.label{font:700 13px "Pixelify Sans",monospace;color:var(--mute);letter-spacing:.02em}
+.top{background:var(--sky);position:relative;overflow:hidden}
+#stars{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}
+.bar{position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px}
+.bar .px{font-size:16px;color:#c9d3ea}
+.lang{display:flex;border:2px solid #34507f}
+.lang button{min-width:44px;min-height:40px;border:0;background:none;color:#9fb0d1;font:700 15px "Pixelify Sans",monospace;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--rose2);color:#1a0d14}
+.lang button:focus-visible{outline:3px solid var(--rose2);outline-offset:2px}
+.sheet{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center;padding-block:clamp(24px,5vw,56px) clamp(10px,2vw,20px)}
+.emblem{width:clamp(150px,20vw,230px);aspect-ratio:30/24;display:grid;place-items:center;background:var(--sky2);border:3px solid var(--rose);box-shadow:0 0 0 3px #061229,6px 6px 0 #061229}
+.emblem svg{width:90%;height:auto}
+@keyframes bob{50%{transform:translateY(-4px)}}
+.sheet h1{font-size:clamp(34px,6vw,70px);text-shadow:4px 4px 0 #061229}
+.cls{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px}
+.cls .c{font:700 clamp(17px,2.2vw,22px) "Pixelify Sans",monospace;color:var(--rose2)}
+.lv{font:700 15px "Pixelify Sans",monospace;background:var(--gold);color:#241a00;padding:3px 9px;box-shadow:3px 3px 0 #061229}
+.status{margin-top:12px;display:flex;align-items:center;gap:10px;font:500 16px "Pixelify Sans",monospace;color:#c9d3ea;min-height:1.6em}
+.status i{width:10px;height:10px;background:#6fe3a2;box-shadow:0 0 0 2px #0b3a24;animation:blink 1.2s steps(1) infinite;flex:none}
+.caret{display:inline-block;width:.55em;height:1em;background:var(--rose2);vertical-align:-.12em;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.skyline{display:block;width:100%;height:auto;image-rendering:pixelated;position:relative;margin-top:-1px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:-2px}
+.stats div{padding:16px 18px;border-right:2px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats b{display:block;font:700 13px "Pixelify Sans",monospace;color:var(--mute);margin-bottom:4px}
+.stats span{font-size:15.5px;font-weight:600}
+
+.sec{padding-block:clamp(36px,5vw,64px)}
+.sech{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:10px 24px;margin-bottom:22px}
+.sech h2{font-size:clamp(28px,4vw,42px)}
+.sech p{margin:6px 0 0;color:var(--mute);max-width:60ch}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;color:var(--mute)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:14px;height:14px;border:2px solid var(--rose);background:#2a1d2c}
+.legend i.l{border-color:var(--lock);background:#151827}
+.treebox{position:relative;padding:clamp(20px,3vw,36px) clamp(10px,2vw,28px);background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/24px 24px,var(--panel);
+  background-blend-mode:normal}
+.treebox::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,transparent 30%,var(--panel) 85%);pointer-events:none}
+.tree{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));row-gap:clamp(34px,5vw,54px);column-gap:clamp(8px,2vw,24px);justify-items:center}
+#edges{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+#edges path{fill:none;stroke-width:4;shape-rendering:crispEdges}
+#edges .on{stroke:var(--rose)}
+#edges .off{stroke:var(--lock);stroke-dasharray:6 6}
+.node{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;max-width:170px;padding:0;border:0;background:none;color:var(--ink);cursor:pointer;text-align:center}
+.node .ic{width:clamp(58px,8vw,78px);aspect-ratio:1;display:grid;place-items:center;background:#24182a;border:3px solid var(--rose);box-shadow:0 0 0 3px #05070d,4px 4px 0 #05070d;transition:transform .15s steps(2)}
+.node .ic svg{width:66%;height:auto}
+.node .nm{font:700 clamp(13px,1.6vw,16px) "Pixelify Sans",monospace;line-height:1.15}
+.node .st{font-size:12.5px;color:var(--rose)}
+.node:hover .ic,.node:focus-visible .ic{transform:translateY(-3px)}
+.node:focus-visible{outline:none}.node:focus-visible .ic{outline:3px solid var(--rose2);outline-offset:4px}
+.node.unlocked .ic{animation:glow 2.4s steps(2) infinite}
+@keyframes glow{50%{box-shadow:0 0 0 3px #05070d,0 0 0 7px #ec9cab33,4px 4px 0 #05070d}}
+.node[aria-pressed=true] .ic{background:var(--rose);border-color:var(--rose2)}
+.node[aria-pressed=true] .nm{color:var(--rose2)}
+.node.root .ic{width:clamp(74px,10vw,98px);border-color:var(--gold);background:#2a2412}
+.node.root .st{color:var(--gold)}
+.node.locked .ic{background:#151827;border-color:var(--lock)}
+.node.locked .ic svg{opacity:.35;filter:grayscale(1)}
+.node.locked .nm{color:var(--mute)}
+.node.locked .st{color:var(--mute)}
+.node.hold .ic{background:#2a2412;border-color:var(--gold);border-style:dashed}
+.node.hold .st{color:var(--gold)}
+.node.hold .lk{border-color:var(--gold)}
+.pop{position:fixed;inset:0;z-index:8;display:none;place-items:center;padding:16px;background:rgba(4,6,12,.8)}
+.pop.on{display:grid}
+.pop .box{max-width:440px;width:100%;padding:24px;background:var(--panel);border:3px solid var(--gold);box-shadow:0 0 0 3px #05070d,8px 8px 0 #05070d;animation:pop .3s steps(3)}
+.pop .label{color:var(--gold)}
+.pop h3{font-size:26px;margin:6px 0 10px}
+.pop p{margin:0 0 16px;color:var(--mute)}
+.pop .row2{display:flex;flex-wrap:wrap;gap:10px}
+.pop .row2 a,.pop .row2 button{display:flex;align-items:center;min-height:44px;padding:8px 14px;border:2px solid var(--gold);background:none;color:var(--ink);font:700 14px "Pixelify Sans",monospace;text-decoration:none;cursor:pointer}
+.pop .row2 a{background:var(--gold);color:#241a00}
+.pop .row2 button:hover,.pop .row2 button:focus-visible,.pop .row2 a:focus-visible{outline:3px solid var(--rose2);outline-offset:2px}
+.node .lk{position:absolute;right:-8px;bottom:-8px;width:26px;height:26px;display:grid;place-items:center;background:#0a0c15;border:2px solid var(--lock)}
+.node .lk svg{width:16px}
+.node .bar2{width:70%;margin-bottom:2px;height:6px;background:#1c2034;border:1px solid var(--lock);overflow:hidden}
+.node .bar2 b{display:block;height:100%;width:40%;background:repeating-linear-gradient(90deg,var(--lock) 0 6px,transparent 6px 10px);animation:load 1.6s steps(8) infinite}
+@keyframes load{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
+.hint{margin:16px 0 0;color:var(--mute);font-size:14px;text-align:center}
+#detail{margin-top:clamp(24px,3vw,36px)}
+.det{padding:clamp(20px,3vw,36px)}
+.det[hidden]{display:none}
+.det.enter{animation:pop .35s steps(4)}
+@keyframes pop{from{opacity:0;transform:translateY(14px)}}
+.dhead{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;margin-bottom:20px}
+.dhead .ic{width:60px;aspect-ratio:1;display:grid;place-items:center;background:#24182a;border:3px solid var(--rose)}
+.dhead .ic svg{width:66%}
+.dhead .ic.l{border-color:var(--lock);background:#151827}
+.dhead .ic.l svg{opacity:.4;filter:grayscale(1)}
+.dhead .ic.g{border-color:var(--gold);background:#2a2412}
+.dhead h3{font-size:clamp(24px,3.4vw,34px)}
+.dhead .label{display:block;margin-bottom:4px}
+.dhead .label.on{color:var(--rose)}.dhead .label.gd{color:var(--gold)}
+.lede{color:var(--mute);margin:0 0 20px;max-width:66ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 18px}
+.tags span{font-size:13px;padding:3px 10px;border:1px solid var(--line);color:var(--mute)}
+.proj+.proj{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
+.proj h4{font:700 20px "Pixelify Sans",monospace;margin:0 0 8px}
+.sub{font:700 15px "Pixelify Sans",monospace;color:var(--mute);margin:22px 0 12px}
+.grid{display:grid;gap:clamp(10px,1.6vw,18px)}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(3,minmax(0,1fr))}
+figure{margin:0}
+.tile{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:zoom-in;box-shadow:0 0 0 1px var(--line);transition:transform .2s steps(3)}
+.tile img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.tile.light{background:#fff}
+.tile::after{content:"";position:absolute;inset:-8px;pointer-events:none;opacity:0;transition:opacity .15s steps(2);--c:var(--rose);
+  background:linear-gradient(var(--c),var(--c)) top left/18px 4px,linear-gradient(var(--c),var(--c)) top left/4px 18px,
+   linear-gradient(var(--c),var(--c)) top right/18px 4px,linear-gradient(var(--c),var(--c)) top right/4px 18px,
+   linear-gradient(var(--c),var(--c)) bottom left/18px 4px,linear-gradient(var(--c),var(--c)) bottom left/4px 18px,
+   linear-gradient(var(--c),var(--c)) bottom right/18px 4px,linear-gradient(var(--c),var(--c)) bottom right/4px 18px;background-repeat:no-repeat}
+.tile:hover,.tile:focus-visible{transform:translateY(-4px);outline:none}
+.tile:hover::after,.tile:focus-visible::after{opacity:1;animation:pulse 1s steps(2) infinite}
+@keyframes pulse{50%{inset:-5px}}
+figcaption{font-size:13.5px;color:var(--mute);padding:8px 2px 0}
+.feature{grid-column:1/-1}
+.icons{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end}
+.icons .tile{width:auto;padding:14px}
+.icons .tile img{width:180px;max-width:36vw}
+.ticks{list-style:none;margin:0;padding:0}
+.ticks li{position:relative;padding:6px 0 6px 22px;font-size:15.5px}
+.ticks li::before{content:"";position:absolute;left:2px;top:15px;width:8px;height:2px;background:var(--rose)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px clamp(24px,4vw,48px)}
+.two h4{font:700 17px "Pixelify Sans",monospace;margin:0 0 6px;color:var(--rose2)}
+.quest{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.quest div{padding:16px;border:2px solid var(--line);background:var(--panel2)}
+.quest b{display:block;font:700 17px "Pixelify Sans",monospace;margin-bottom:4px}
+.quest span{color:var(--mute);font-size:15px}
+.go{display:inline-flex;align-items:center;gap:8px;margin-top:10px;min-height:40px;padding:6px 12px;border:2px solid var(--rose);background:none;color:var(--rose2);font:700 14px "Pixelify Sans",monospace;cursor:pointer}
+.go:hover,.go:focus-visible{background:var(--rose);color:#1a0d14;outline:none}
+.inspo{margin:20px 0 0;padding-left:14px;border-left:3px solid var(--gold);color:var(--mute)}
+details{margin-top:20px;border-top:1px solid var(--line)}
+summary{cursor:pointer;min-height:44px;display:flex;align-items:center;gap:10px;color:var(--mute);font:700 15px "Pixelify Sans",monospace;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▶";font-size:11px;color:var(--rose);transition:transform .15s steps(2)}
+details[open] summary::before{transform:rotate(90deg)}
+summary:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+details p{margin:0 0 10px;font-size:15px;max-width:66ch}
+.lockmsg{display:flex;gap:14px;align-items:center;padding:16px;border:2px dashed var(--lock);color:var(--mute);margin-top:8px}
+.lockmsg .bar2{flex:1;max-width:220px;height:10px;background:#1c2034;border:1px solid var(--lock);overflow:hidden}
+.lockmsg .bar2 b{display:block;height:100%;width:40%;background:repeating-linear-gradient(90deg,var(--lock) 0 6px,transparent 6px 10px);animation:load 1.6s steps(8) infinite}
+.inv{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,20px)}
+.inv h3{font-size:15px;color:var(--mute);margin:0 0 10px}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slots span{padding:7px 11px;background:var(--panel2);border:2px solid var(--line);box-shadow:inset -2px -2px 0 #0a0c15;font-size:14px;white-space:nowrap}
+.ach{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:clamp(10px,1.6vw,16px)}
+.ach div{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;padding:14px;background:var(--panel);border:2px solid var(--line)}
+.ach svg{width:34px}
+.ach b{display:block;font:700 15px "Pixelify Sans",monospace;line-height:1.2}
+.ach span{font-size:13px;color:var(--mute)}
+.contact{background:var(--sky);margin-top:clamp(36px,5vw,64px);padding-block:clamp(40px,6vw,80px)}
+.contact h2{font-size:clamp(32px,5.4vw,60px);color:#ffd2d9;margin-bottom:24px;animation:neon 6s steps(1) infinite}
+@keyframes neon{0%,100%{opacity:1}91%{opacity:.35}93%{opacity:1}95%{opacity:.5}96%{opacity:1}}
+.mail{display:flex;flex-wrap:wrap;gap:12px}
+.mail a,.mail button{display:flex;align-items:center;min-height:52px;padding:12px 20px;border:2px solid #34507f;background:var(--sky2);color:#f2ece6;
+  font:500 clamp(16px,2vw,20px) Archivo,sans-serif;text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 #061229;transition:transform .15s steps(2),box-shadow .15s steps(2);overflow-wrap:anywhere}
+.mail button{font:700 16px "Pixelify Sans",monospace;color:var(--rose2)}
+.mail a:hover,.mail a:focus-visible,.mail button:hover,.mail button:focus-visible{border-color:var(--rose2);outline:none;transform:translate(2px,2px);box-shadow:2px 2px 0 #061229}
+footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
+.lb{position:fixed;inset:0;background:rgba(4,6,12,.95);display:none;place-items:center;z-index:9;padding:60px 64px 20px}
+.lb.on{display:grid}
+.lb img{max-width:100%;max-height:calc(100vh - 100px);image-rendering:pixelated;background:#000}
+.lb button{position:absolute;width:44px;height:44px;border:2px solid #556;background:#111;color:#fff;font:700 20px "Pixelify Sans",monospace;cursor:pointer}
+.lb button:focus-visible{outline:3px solid var(--rose2)}
+#lbClose{top:10px;right:12px}#lbPrev{left:10px;top:50%}#lbNext{right:10px;top:50%}
+.lb p{position:absolute;left:16px;top:18px;margin:0;color:#c9c3cf;font-size:14px;right:70px}
+
+@media(max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:2px solid var(--line)}
+  .inv{grid-template-columns:repeat(2,minmax(0,1fr))}.g4{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.sheet{grid-template-columns:minmax(0,1fr)}.two,.quest,.g3{grid-template-columns:minmax(0,1fr)}
+  .node .st{display:none}.lb{padding:60px 10px 70px}#lbPrev,#lbNext{top:auto;bottom:12px}}
+@media(max-width:420px){.inv,.stats{grid-template-columns:minmax(0,1fr)}.stats div{border-right:0;border-bottom:2px solid var(--line)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="wrap bar">
+    <span class="px">A. Afanaseva</span>
+    <div class="lang" role="group" aria-label="Language"><button data-set="en" aria-pressed="true">EN</button><button data-set="ru" aria-pressed="false">RU</button></div>
+  </div>
+  <div class="wrap sheet">
+    <div class="emblem" data-sprite="faun" aria-hidden="true"></div>
+    <div>
+      <h1>Aleksandra Afanaseva</h1>
+      <div class="cls">
+        <span class="c"><span data-t="en">Class: Pixel &amp; 2D Artist</span><span data-t="ru">Класс: пиксель- и 2D-художница</span></span>
+        <span class="lv"><span data-t="en">Lv 3</span><span data-t="ru">Ур. 3</span></span>
+        <span class="label"><span data-t="en">3 years in game dev</span><span data-t="ru">3 года в геймдеве</span></span>
+      </div>
+      <p class="status"><span id="type"></span></p>
+    </div>
+  </div>
+  <img class="skyline" src="img/skyline.webp" width="1600" height="536" alt="Pixel art night skyline with lit windows">
+</header>
+
+<div class="wrap">
+  <div class="stats pxbox">
+    <div><b><span data-t="en">Base</span><span data-t="ru">База</span></b><span><span data-t="en">Madrid, Spain</span><span data-t="ru">Мадрид, Испания</span></span></div>
+    <div><b><span data-t="en">Work permit</span><span data-t="ru">Право на работу</span></b><span><span data-t="en">Yes, Spain</span><span data-t="ru">Есть, Испания</span></span></div>
+    <div><b><span data-t="en">Languages</span><span data-t="ru">Языки</span></b><span><span data-t="en">RU native, EN C1, ES basic</span><span data-t="ru">RU родной, EN C1, ES базовый</span></span></div>
+    <div><b><span data-t="en">Party mode</span><span data-t="ru">Формат</span></b><span><span data-t="en">Remote, freelance or contract</span><span data-t="ru">Удалённо, фриланс или контракт</span></span></div>
+  </div>
+</div>
+
+<main>
+  <section class="sec wrap" id="tree" aria-labelledby="treeh">
+    <div class="sech">
+      <div>
+        <h2 id="treeh"><span data-t="en">Skill tree</span><span data-t="ru">Древо навыков</span></h2>
+        <p><span data-t="en">Pick a skill to see the work behind it.</span><span data-t="ru">Выберите навык, чтобы увидеть работы.</span></p>
+      </div>
+      <div class="legend"><span><i></i><span data-t="en">Unlocked</span><span data-t="ru">Открыт</span></span><span><i class="l"></i><span data-t="en">In progress</span><span data-t="ru">В процессе</span></span><span><i style="border-color:var(--gold);border-style:dashed;background:#2a2412"></i><span data-t="en">On request</span><span data-t="ru">По запросу</span></span></div>
+    </div>
+
+    <div class="treebox pxbox">
+      <div class="tree" id="treeGrid">
+        <svg id="edges" aria-hidden="true"></svg>
+        <button class="node root unlocked" data-n="artist" style="grid-row:1;grid-column:2"><span class="ic" data-sprite="palette"></span><span class="nm"><span data-t="en">Artist</span><span data-t="ru">Художница</span></span><span class="st"><span data-t="en">Base class</span><span data-t="ru">Базовый класс</span></span></button>
+
+        <button class="node unlocked" data-n="core" data-p="artist" style="grid-row:2;grid-column:2"><span class="ic" data-sprite="artist"></span><span class="nm"><span data-t="en">Pixel artist</span><span data-t="ru">Пиксель-художница</span></span><span class="st"><span data-t="en">This portfolio</span><span data-t="ru">Это портфолио</span></span></button>
+        <button class="node hold" data-n="digital" data-p="artist" data-popup="1" style="grid-row:2;grid-column:3"><span class="ic" data-sprite="tablet"></span><span class="lk" data-sprite="key"></span><span class="nm"><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></span><span class="st"><span data-t="en">On request</span><span data-t="ru">По запросу</span></span></button>
+
+        <button class="node unlocked" data-n="characters" data-p="core" style="grid-row:3;grid-column:1"><span class="ic" data-sprite="face"></span><span class="nm"><span data-t="en">Characters</span><span data-t="ru">Персонажи</span></span><span class="st"><span data-t="en">3 works</span><span data-t="ru">3 работы</span></span></button>
+        <button class="node unlocked" data-n="scenes" data-p="core" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="house"></span><span class="nm"><span data-t="en">Scenes &amp; items</span><span data-t="ru">Сцены и предметы</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
+        <button class="node unlocked" data-n="game-jams" data-p="core" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">6 works</span><span data-t="ru">6 работ</span></span></button>
+
+        <button class="node unlocked" data-n="commercial" data-p="characters scenes" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="case"></span><span class="nm"><span data-t="en">Real projects</span><span data-t="ru">Реальные проекты</span></span><span class="st"><span data-t="en">Steam release</span><span data-t="ru">Релиз в Steam</span></span></button>
+        <button class="node locked" data-n="ai" data-p="characters core" data-via="scenes" style="grid-row:4;grid-column:2"><span class="ic" data-sprite="chip"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">AI workflow</span><span data-t="ru">Работа с нейросетями</span></span><span class="bar2"><b></b></span></button>
+        <button class="node locked" data-n="drawing" data-p="game-jams" style="grid-row:4;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Drawing mastery</span><span data-t="ru">Мастерство рисунка</span></span><span class="bar2"><b></b></span></button>
+      </div>
+    </div>
+    <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are skills I'm levelling up right now. 2D digital art lives in a separate portfolio.</span><span data-t="ru">Светящиеся навыки открыты, закрытые я прокачиваю прямо сейчас. 2D digital-арт живёт в отдельном портфолио.</span></p>
+
+    <div id="detail" aria-live="polite">
+
+      <article class="det pxbox" data-d="artist" hidden>
+        <div class="dhead"><span class="ic g" data-sprite="palette"></span><div><span class="label gd"><span data-t="en">Base class</span><span data-t="ru">Базовый класс</span></span><h3><span data-t="en">Artist</span><span data-t="ru">Художница</span></h3></div></div>
+        <p class="lede"><span data-t="en">I'm a pixel and 2D artist based in Madrid. My core is characters: faces, anatomy, emotion. I also cover environments, props, UI, icons and sprites, and adapt pixel density and palette to the style of each project.</span><span data-t="ru">Я пиксель- и 2D-художница из Мадрида. Моя основа — персонажи: лица, анатомия, эмоции. Ещё делаю окружение, пропсы, UI, иконки и спрайты, подстраивая плотность пикселя и палитру под стиль проекта.</span></p>
+        <p class="lede" style="margin-top:-6px"><span data-t="en">I started as an artist at a small indie studio and study game design at U-Tad, so I plan art with the engine, the animators and the UI in mind.</span><span data-t="ru">Начинала художницей в небольшой инди-студии и учусь на геймдизайне в U-Tad, поэтому делаю арт сразу с расчётом на движок, аниматоров и интерфейс.</span></p>
+        <p class="inspo"><span data-t="en">Inspired by Blasphemous above all, and by Lazy Bear Games: Graveyard Keeper and Punch Club.</span><span data-t="ru">Вдохновляюсь прежде всего Blasphemous, а ещё играми Lazy Bear Games: Graveyard Keeper и Punch Club.</span></p>
+      </article>
+
+      <article class="det pxbox" data-d="core" hidden>
+        <div class="dhead"><span class="ic" data-sprite="artist"></span><div><span class="label on"><span data-t="en">Main branch</span><span data-t="ru">Основная ветка</span></span><h3><span data-t="en">Pixel artist</span><span data-t="ru">Пиксель-художница</span></h3></div></div>
+        
+        <div class="two">
+          <div>
+            <h4><span data-t="en">Passive skills</span><span data-t="ru">Пассивные навыки</span></h4>
+            <ul class="ticks" data-t="en"><li>Detailed high-res pixel art, including large characters</li><li>Different pixelisation styles</li><li>Palettes of any size, from tight to rich</li><li>Working alongside animators</li></ul>
+            <ul class="ticks" data-t="ru"><li>Детализированный high-res пиксель-арт, в том числе крупные персонажи</li><li>Разные стили пикселизации</li><li>Палитры любого объёма, от сжатых до богатых</li><li>Работа в связке с аниматорами</li></ul>
+          </div>
+          <div>
+            <h4><span data-t="en">How I work</span><span data-t="ru">Как я работаю</span></h4>
+            <ul class="ticks" data-t="en"><li>From scratch from a written brief or from references</li><li>Hand-finished assets, with AI used only as a reference</li><li>Layered, production-ready source files</li></ul>
+            <ul class="ticks" data-t="ru"><li>С нуля по описанию или по референсам</li><li>Ручная доработка ассета, нейросети только как референс</li><li>Послойные исходники, готовые к продакшену</li></ul>
+          </div>
+        </div>
+        
+      </article>
+
+      <article class="det pxbox" data-d="characters" hidden>
+        <div class="dhead"><span class="ic" data-sprite="face"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Characters</span><span data-t="ru">Персонажи</span></h3></div></div>
+        <div class="tags"><span>Iron Frontiers</span><span data-t="en">Released on Steam</span><span data-t="ru">Релиз в Steam</span><span data-t="en">Freelance</span><span data-t="ru">Фриланс</span></div>
+        <p class="lede"><span data-t="en">Character portraits for Iron Frontiers. Age, scars, fatigue and temper read from the face first, and each character gets its own treatment of light and palette.</span><span data-t="ru">Портреты персонажей для Iron Frontiers. Возраст, шрамы, усталость и характер читаются прежде всего по лицу, а свет и палитра у каждого героя свои.</span></p>
+        <div class="grid g4">
+          <figure><button class="tile light" data-cap="Iron Frontiers, character portrait, 240×240 px" data-capru="Iron Frontiers, портрет персонажа, 240×240 px"><img src="img/char-officer.png" width="240" height="240" loading="lazy" alt="Pixel portrait of a man in glasses and a white uniform"></button><figcaption>240×240 px</figcaption></figure>
+          <figure><button class="tile light" data-cap="Iron Frontiers, character portrait, 240×240 px" data-capru="Iron Frontiers, портрет персонажа, 240×240 px"><img src="img/char-wounded.png" width="240" height="240" loading="lazy" alt="Pixel portrait of a wounded man in a hoodie"></button><figcaption>240×240 px</figcaption></figure>
+          <figure><button class="tile light" data-cap="Iron Frontiers, character portrait, 240×240 px" data-capru="Iron Frontiers, портрет персонажа, 240×240 px"><img src="img/portrait.webp" width="1600" height="1600" loading="lazy" alt="Pixel art portrait of a bald scarred man"></button><figcaption>240×240 px</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="det pxbox" data-d="scenes" hidden>
+        <div class="dhead"><span class="ic" data-sprite="house"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Scenes &amp; items</span><span data-t="ru">Сцены и предметы</span></h3></div></div>
+        <div class="tags"><span data-t="en">Horror puzzle game</span><span data-t="ru">Хоррор-головоломка</span><span data-t="en">Freelance</span><span data-t="ru">Фриланс</span></div>
+        <p class="lede"><span data-t="en">A full horror puzzle game where I worked as a pixel artist on part of the art tasks: atmospheric scenes and inventory items in one cold, muted palette.</span><span data-t="ru">Полноценная хоррор-игра с головоломками, где я делала часть арт-задач как пиксель-художница: атмосферные сцены и предметы инвентаря в одной холодной приглушённой палитре.</span></p>
+        <p class="sub"><span data-t="en">Scenes</span><span data-t="ru">Сцены</span></p>
+        <div class="grid g3">
+          <figure class="feature"><button class="tile" data-cap="Horror puzzle game, scene" data-capru="Хоррор-головоломка, сцена"><img src="img/door.webp" width="1600" height="1075" loading="lazy" alt="Pixel art dark door lit by a single bulb against a blue wall"></button></figure>
+          <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-raven.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of a dark bird"></button><figcaption>256×171 px</figcaption></figure>
+          <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-hands.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of hands holding soil"></button><figcaption>256×171 px</figcaption></figure>
+          <figure><button class="tile" data-cap="Horror puzzle game, scene, 256×171 px" data-capru="Хоррор-головоломка, сцена, 256×171 px"><img src="img/small-car.jpg" width="256" height="171" loading="lazy" alt="Low-resolution pixel scene of hands on a rusty old car"></button><figcaption>256×171 px</figcaption></figure>
+        </div>
+        <p class="sub"><span data-t="en">Items</span><span data-t="ru">Предметы</span></p>
+        <div class="icons">
+          <figure><button class="tile" data-cap="Horror puzzle game, item, 100×100 px" data-capru="Хоррор-головоломка, предмет, 100×100 px"><img src="img/icon-spoon.png" width="100" height="100" loading="lazy" alt="Pixel item icon of a spoon with dark contents"></button><figcaption>100×100 px</figcaption></figure>
+          <figure><button class="tile" data-cap="Horror puzzle game, item, 100×100 px" data-capru="Хоррор-головоломка, предмет, 100×100 px"><img src="img/icon-bottle.png" width="100" height="100" loading="lazy" alt="Pixel item icon of a water bottle"></button><figcaption>100×100 px</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="det pxbox" data-d="game-jams" hidden>
+        <div class="dhead"><span class="ic" data-sprite="pad"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></h3></div></div>
+        <p class="lede"><span data-t="en">Three jams of 2–3 days each. In the two below I was both the artist and a game designer; in the third, only the game designer.</span><span data-t="ru">Три джема по 2–3 дня. В двух ниже я была и художницей, и геймдизайнером, в третьем только геймдизайнером.</span></p>
+        <div class="proj">
+          <h4><span data-t="en">Storefronts</span><span data-t="ru">Витрины</span></h4>
+          <div class="tags"><span data-t="en">Game jam, 2024</span><span data-t="ru">Геймджем, 2024</span><span data-t="en">2–3 days</span><span data-t="ru">2–3 дня</span><span data-t="en">Environment art</span><span data-t="ru">Окружение</span></div>
+          <p class="lede"><span data-t="en">Building façades on one shared frame, each with its own palette and personality: a jewellery shop, a café and a bar.</span><span data-t="ru">Фасады на общей основе, у каждого свой характер и палитра: ювелирный, кафе и бар.</span></p>
+          <div class="grid g3">
+            <figure><button class="tile" data-cap="Game jam 2024, jewellery shop" data-capru="Геймджем 2024, ювелирный магазин"><img src="img/shop-jewellery.webp" width="1600" height="1600" loading="lazy" alt="Pixel art jewellery shop front with arched windows and gem displays"></button><figcaption><span data-t="en">Jewellery shop</span><span data-t="ru">Ювелирный</span></figcaption></figure>
+            <figure><button class="tile" data-cap="Game jam 2024, café" data-capru="Геймджем 2024, кафе"><img src="img/shop-cafe.webp" width="1600" height="1600" loading="lazy" alt="Pixel art café front with striped awnings and a neon sign"></button><figcaption><span data-t="en">Café</span><span data-t="ru">Кафе</span></figcaption></figure>
+            <figure><button class="tile" data-cap="Game jam 2024, bar" data-capru="Геймджем 2024, бар"><img src="img/shop-bar.webp" width="1600" height="1600" loading="lazy" alt="Pixel art grey bar front with a pink neon sign"></button><figcaption><span data-t="en">Bar</span><span data-t="ru">Бар</span></figcaption></figure>
+          </div>
+        </div>
+        <div class="proj">
+          <h4><span data-t="en">Props</span><span data-t="ru">Пропсы</span></h4>
+          <div class="tags"><span data-t="en">Game jam, 2025</span><span data-t="ru">Геймджем, 2025</span><span data-t="en">2–3 days</span><span data-t="ru">2–3 дня</span><span data-t="en">Game on itch.io</span><span data-t="ru">Игра на itch.io</span></div>
+          <p class="lede"><span data-t="en">Detailed objects where the material is the point: carved jade, glazed porcelain with gold, textured cast iron.</span><span data-t="ru">Детализированные предметы, где главное материал: резной нефрит, глазурованный фарфор с золотом, фактурный чугун.</span></p>
+          <div class="grid g3">
+            <figure><button class="tile" data-cap="Game jam 2025, jade figurine" data-capru="Геймджем 2025, нефритовая статуэтка"><img src="img/prop-jade.webp" width="1600" height="1199" loading="lazy" alt="Pixel art jade figurine of a smiling seated monk"></button><figcaption><span data-t="en">Jade figurine</span><span data-t="ru">Нефритовая статуэтка</span></figcaption></figure>
+            <figure><button class="tile" data-cap="Game jam 2025, porcelain vase" data-capru="Геймджем 2025, фарфоровая ваза"><img src="img/prop-vase.webp" width="1600" height="1199" loading="lazy" alt="Pixel art pink porcelain vase with gold floral pattern"></button><figcaption><span data-t="en">Porcelain vase</span><span data-t="ru">Фарфоровая ваза</span></figcaption></figure>
+            <figure><button class="tile" data-cap="Game jam 2025, cast iron teapot" data-capru="Геймджем 2025, чугунный чайник"><img src="img/prop-teapot.webp" width="1600" height="1199" loading="lazy" alt="Pixel art cast iron teapot with a wrapped handle"></button><figcaption><span data-t="en">Cast iron teapot</span><span data-t="ru">Чугунный чайник</span></figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="det pxbox" data-d="commercial" hidden>
+        <div class="dhead"><span class="ic" data-sprite="case"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Real projects</span><span data-t="ru">Реальные проекты</span></h3></div></div>
+        <p class="lede"><span data-t="en">Commercial pixel art on shipped and in-production games, as a freelancer.</span><span data-t="ru">Коммерческий пиксель-арт на фрилансе для вышедших игр и игр в производстве.</span></p>
+        <div class="quest">
+          <div><b>Iron Frontiers</b><span><span data-t="en">Freelance pixel artist, character portraits. Released on Steam.</span><span data-t="ru">Пиксель-художница на фрилансе, портреты персонажей. Релиз в Steam.</span></span><br><button class="go" data-goto="characters">▶ <span data-t="en">See the portraits</span><span data-t="ru">Смотреть портреты</span></button></div>
+          <div><b><span data-t="en">Horror puzzle game</span><span data-t="ru">Хоррор-головоломка</span></b><span><span data-t="en">Freelance pixel artist on part of the art tasks: scenes and inventory items.</span><span data-t="ru">Пиксель-художница на фрилансе, часть арт-задач: сцены и предметы инвентаря.</span></span><br><button class="go" data-goto="scenes">▶ <span data-t="en">See the scenes</span><span data-t="ru">Смотреть сцены</span></button></div>
+        </div>
+      </article>
+
+      
+
+      
+
+      <article class="det pxbox" data-d="drawing" hidden>
+        <div class="dhead"><span class="ic l" data-sprite="brush"></span><div><span class="label"><span data-t="en">Levelling up</span><span data-t="ru">Прокачиваю</span></span><h3><span data-t="en">Drawing mastery</span><span data-t="ru">Мастерство рисунка</span></h3></div></div>
+        <p class="lede"><span data-t="en">I'm working on my drawing fundamentals right now, to make every character and scene stronger, in pixels and outside them.</span><span data-t="ru">Сейчас прокачиваю базу рисунка, чтобы персонажи и сцены становились сильнее и в пикселях, и вне их.</span></p>
+        <div class="lockmsg"><span data-t="en">Training in progress</span><span data-t="ru">Тренировка идёт</span><span class="bar2"><b></b></span></div>
+      </article>
+
+      <article class="det pxbox" data-d="ai" hidden>
+        <div class="dhead"><span class="ic l" data-sprite="chip"></span><div><span class="label"><span data-t="en">Levelling up</span><span data-t="ru">Прокачиваю</span></span><h3><span data-t="en">AI workflow</span><span data-t="ru">Работа с нейросетями</span></h3></div></div>
+        <p class="lede"><span data-t="en">Improving how I use neural networks for references and ideas, for characters and pixel art in general, while every final asset stays hand-made.</span><span data-t="ru">Совершенствую работу с нейросетями для референсов и поиска идей, и для персонажей, и для пиксель-арта в целом, при этом финальный ассет всегда делаю руками.</span></p>
+        <div class="lockmsg"><span data-t="en">Training in progress</span><span data-t="ru">Тренировка идёт</span><span class="bar2"><b></b></span></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec wrap" aria-labelledby="invh" style="padding-top:0">
+    <div class="sech"><h2 id="invh"><span data-t="en">Inventory</span><span data-t="ru">Инвентарь</span></h2></div>
+    <div class="inv">
+      <div class="pxbox" style="padding:16px"><h3><span data-t="en">Art</span><span data-t="ru">Арт</span></h3><div class="slots"><span>Aseprite</span><span>Photoshop</span><span>Substance</span><span><span data-t="en">Blender (basics)</span><span data-t="ru">Blender (база)</span></span></div></div>
+      <div class="pxbox" style="padding:16px"><h3><span data-t="en">Engines</span><span data-t="ru">Движки</span></h3><div class="slots"><span>Unity</span><span>Unreal Engine</span></div></div>
+      <div class="pxbox" style="padding:16px"><h3><span data-t="en">Production</span><span data-t="ru">Продакшен</span></h3><div class="slots"><span>Jira</span><span>Trello</span><span>Notion</span><span>Miro</span><span>Excel</span><span>Google Sheets</span></div></div>
+      <div class="pxbox" style="padding:16px"><h3><span data-t="en">AI, for references</span><span data-t="ru">ИИ, для референсов</span></h3><div class="slots"><span>Midjourney</span><span>NanoBanana</span><span>Seedance</span><span>Claude</span><span>ChatGPT</span></div></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" aria-labelledby="achh" style="padding-top:0">
+    <div class="sech"><h2 id="achh"><span data-t="en">Achievements</span><span data-t="ru">Достижения</span></h2></div>
+    <div class="ach">
+      <div><span data-sprite="trophy"></span><span><b><span data-t="en">Shipped on Steam</span><span data-t="ru">Релиз в Steam</span></b><span>Iron Frontiers</span></span></div>
+      <div><span data-sprite="pad"></span><span><b><span data-t="en">Jam survivor ×3</span><span data-t="ru">Пережила 3 джема</span></b><span><span data-t="en">2–3 days each</span><span data-t="ru">По 2–3 дня</span></span></span></div>
+      <div><span data-sprite="star"></span><span><b><span data-t="en">Built from zero</span><span data-t="ru">С нуля до финала</span></b><span><span data-t="en">A university game made start to finish by me and my team</span><span data-t="ru">Университетская игра, от начала до конца сделанная мной и командой</span></span></span></div>
+      <div><span data-sprite="clip"></span><span><b><span data-t="en">Producer</span><span data-t="ru">Продюсер</span></b><span><span data-t="en">Steam roguelite, release 2027</span><span data-t="ru">Roguelite для Steam, релиз 2027</span></span></span></div>
+      <div><span data-sprite="heart"></span><span><b><span data-t="en">Co-op master</span><span data-t="ru">Мастер кооператива</span></b><span><span data-t="en">Big teams, clear tasks, calm deadlines</span><span data-t="ru">Большие команды, ясные задачи, спокойные дедлайны</span></span></span></div>
+    </div>
+  </section>
+  <section class="sec wrap" aria-labelledby="eduh" style="padding-top:0">
+    <div class="sech"><h2 id="eduh"><span data-t="en">Education</span><span data-t="ru">Образование</span></h2></div>
+    <div class="pxbox" style="padding:18px 20px">
+      <p style="margin:0"><b>U-Tad, Madrid</b><br><span style="color:var(--mute)"><span data-t="en">Interactive Product Design (now Video Game Design), game design, 2023–2027</span><span data-t="ru">Interactive Product Design (сейчас Video Game Design), геймдизайн, 2023–2027</span></span></p>
+      <details>
+        <summary><span data-t="en">Thesis, first degree, courses</span><span data-t="ru">Диплом, первое образование, курсы</span></summary>
+        <div data-t="en"><p><b>Thesis:</b> UX and cognitive accessibility, supervised by Alberto Arjona Molina.</p><p><b>First degree, Russia:</b> special education.</p><p><b>Courses:</b> AI Fluency: Framework &amp; Foundations, Anthropic.</p></div>
+        <div data-t="ru"><p><b>Диплом:</b> UX и когнитивная доступность, научный руководитель Alberto Arjona Molina.</p><p><b>Первое высшее, Россия:</b> олигофренопедагогика (специальная педагогика).</p><p><b>Курсы:</b> AI Fluency: Framework &amp; Foundations, Anthropic.</p></div>
+      </details>
+    </div>
+  </section>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2><span data-t="en">Write to me about your worlds</span><span data-t="ru">Напишите мне о ваших мирах</span></h2>
+    <div class="mail">
+      <a href="mailto:Biersackneley@gmail.com">Biersackneley@gmail.com</a>
+      <button id="copy" type="button"><span data-t="en">Copy</span><span data-t="ru">Скопировать</span></button>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© Aleksandra Afanaseva</div></footer>
+
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popH">
+  <div class="box">
+    <span class="label"><span data-t="en">On request</span><span data-t="ru">По запросу</span></span>
+    <h3 id="popH"><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></h3>
+    <p><span data-t="en">My 2D digital illustration lives in a separate portfolio. Write to Aleksandra to get access to the 2D digital artist portfolio.</span><span data-t="ru">Мои 2D digital-иллюстрации собраны в отдельном портфолио. Напишите Александре, чтобы получить доступ к портфолио 2D digital-художника.</span></p>
+    <div class="row2"><a href="mailto:Biersackneley@gmail.com?subject=2D%20portfolio">Biersackneley@gmail.com</a><button id="popClose" type="button"><span data-t="en">Close</span><span data-t="ru">Закрыть</span></button></div>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Artwork preview">
+  <p id="lbCap"></p>
+  <button id="lbClose" aria-label="Close">×</button>
+  <button id="lbPrev" aria-label="Previous">◀</button>
+  <button id="lbNext" aria-label="Next">▶</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script>
+{
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,root=document.documentElement;
+  const PAL={S:'#f6cfb4',u:'#5b7fc0',n:'#efe0c4',h:'#6e4428',s:'#f6cfb4',e:'#1b1a22',w:'#ffffff',p:'#f08fa3',m:'#b8465c',t:'#5b7fc0',f:'#8a5a3c',F:'#5e3a24',k:'#2a2f45',H:'#6b4a6e',S:'#f2c6a8',E:'#1b1a22',R:'#d9566f',C:'#5b7fc0',W:'#dfe6f5',Y:'#ffd36b',D:'#34507f',G:'#5fb784',K:'#2a2f45',B:'#a36a3e',b:'#7a4a28',P:'#ec9cab',O:'#ff9b4a',L:'#8a90aa',l:'#5b6078',T:'#ffd36b',t:'#c99a2a'};
+  const SPR={
+    faun:["..n..........n..","..nn........nn..","...nnhhhhhhnn...","..hhhhhhhhhhhh..",".hhhhhhhhhhhhhh.",".hhhssssssssshhh",".hhsssssssssshh.","sshswessssweshss",".hhseesssseeshh.",".hhpssssssssphh.",".hhssssmmsssshh.","..hhsssssssshh..","....uuuuuuuu....","...uuuuuuuuuu...","..suuuuuuuuuus..","..suuuuuuuuuus..","....ffffffff....","....fFffffFf....","....ff....ff....","....kk....kk...."],
+    palette:["....BBBBB..","..BBBBBBBB.",".BBRBBBYBBB","BBBBBBBBBCB","BB..BBBBBBB","BB..BBBBGB.","BBBBBBBBBB.",".BBBWBBPB..","..BBBBBB..."],
+    tablet:["KKKKKKKKK..","KCCCCCCCK..","KCWWWWWCK.Y","KCWPPWWCKY.","KCWWPPWCY..","KCWWWWWYK..","KCCCCCCCK..","KKKKKKKKK.."],
+    key:["..TTT..",".T...T.",".T...T.","..TTT..","...T...","...TT..","...T...","...TT.."],
+    star:["....T....","...TTT...","TTTTTTTTT",".TTTtTTT.","..TTTTT..",".TTT.TTT.","TT.....TT"],
+    heart:[".PP.PP.","PPPPPPP","PWPPPPP","PPPPPPP",".PPPPP.","..PPP..","...P..."],
+    artist:["..........PP",".........PPP","........LLPP",".......YLLL.","......YYtL..",".....YYt....","....YYt.....","...YYt......","..SSt.......","..SS........",".KS.........","K..........."],
+    face:["..hhhhhh..",".hhhhhhhh.","hhssssssh h".replace(" ",""),"hssssssssh","hsWEssWEsh","hsEEssEEsh","hpssmmssph",".ssssssss.","..CCCCCC..",".CCCCCCCC."],
+    house:["....P....","...PPP...","..PPPPP..",".PPPPPPP.","PRRRRRRRP",".CCCCCCC.",".CYCCCKC.",".CCCCCKC.",".CYCCCKC.","lllllllll"],
+    pad:[".........",".KKKKKKK.","KKWKKKKRK","KWWWKKRKR","KKWKKKKRK","KKKKKKKKK","KKK...KKK","KK.....KK"],
+    case:["...BBB...","..B...B..","BBBBBBBBB","BbbbYbbbB","BbbbYbbbB","BbbbbbbbB","BbbbbbbbB","BBBBBBBBB"],
+    clip:["...KKK...",".WWKYKWW.",".WWWWWWW.",".WKKKKKW.",".WWWWWWW.",".WKKKWWW.",".WWWWWWW.",".WKKKKKW.",".WWWWWWW."],
+    book:[".DDDDDDD.","DCCCCCCWD","DCYYYCCWD","DCCCCCCWD","DCRRRRCWD","DCCCCCCWD","DCCCCCCWD","DDDDDDDDD"],
+    brush:[".......WW","......WWW",".....WWW.","....YYW..","...YYY...","..RRY....",".RRR.....","RRR......","RR......."],
+    chip:[".K.K.K.K.","KKKKKKKKK",".KCCCCCK.","KKCWWWCKK",".KCWRWCK.","KKCWWWCKK",".KCCCCCK.","KKKKKKKKK",".K.K.K.K."],
+    lock:["..LLL..",".L...L.",".L...L.","lllllll","llLLLll","lllLlll","lllllll"],
+    trophy:["TTTTTTT","TtTTTtT",".TTTTT.","..TTT..","...T...","..TTT..",".ttttt."],
+    globe:["..CCC..",".CGGCC.","CCGGCGC","CCCGGCC","CGCCCGC",".CGCCC.","..CCC.."]
+  };
+  const svgOf=m=>{const h=m.length,w=Math.max(...m.map(r=>r.length));let r='';
+    m.forEach((row,y)=>[...row].forEach((c,x)=>{if(PAL[c])r+=`<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${PAL[c]}"/>`}));
+    return `<svg viewBox="0 0 ${w} ${h}" shape-rendering="crispEdges" aria-hidden="true">${r}</svg>`};
+  document.querySelectorAll('[data-sprite]').forEach(el=>{const m=SPR[el.dataset.sprite];if(m)el.innerHTML=svgOf(m)});
+  {const em=document.querySelector('.emblem'),FW=28,FH=22,base=SPR.faun;
+   const easel=["BBBBBBBBBB",...Array(8).fill("BWWWWWWWWB"),"BBBBBBBBBB","..B....B..","..B....B..",".B......B.",".B......B.","B........B"];
+   const heart=[".RR..RR.","RRRRRRRR","RRRRRRRR","RRRRRRRR",".RRRRRR.","..RRRR..","...RR...","........"];
+   const hp=[];heart.forEach((r,y)=>[...r].forEach((c,x)=>{if(c==='R')hp.push([x,y])}));
+   const put=(g,spr,ox,oy)=>spr.forEach((r,y)=>[...r].forEach((c,x)=>{const X=x+ox,Y=y+oy;if(c!=='.'&&Y>=0&&Y<FH&&X>=0&&X<FW)g[Y][X]=c}));
+   const dot=(g,x,y,c)=>{if(y>=0&&y<FH&&x>=0&&x<FW)g[y][x]=c};
+   const faun=(blink)=>base.map(r=>blink?r.replace(/we/g,'ss'):r);
+   const frame=({n=0,pose=0,jump=0,blink=false,spark=0,glow=false})=>{
+     const g=Array.from({length:FH},()=>Array(FW).fill('.'));
+     put(g,easel,18,4);
+     hp.slice(0,n).forEach(([x,y])=>dot(g,19+x,5+y,glow&&spark%2?'P':'R'));
+     const oy=2-jump,f=faun(blink).map(r=>r.split(''));
+     if(pose){f[14][13]='.';f[15][13]='.'}
+     put(g,f.map(r=>r.join('')),0,oy);
+     if(pose===1){dot(g,13,14+oy,'s');dot(g,14,14+oy,'s');dot(g,15,13+oy,'Y');dot(g,16,12+oy,'Y');dot(g,17,11+oy,'K')}
+     if(pose===2){dot(g,13,14+oy,'s');dot(g,14,13+oy,'s');dot(g,15,12+oy,'Y');dot(g,16,11+oy,'Y');dot(g,17,10+oy,'K')}
+     return svgOf(g.map(r=>r.join('')))};
+   const seq=[];
+   for(let n=0;n<=hp.length;n+=3)seq.push(frame({n,pose:seq.length%2?2:1,blink:n===18}));
+   const full=hp.length;
+   seq.push(frame({n:full,pose:1}),frame({n:full,jump:2,spark:1,glow:true}),frame({n:full,spark:2}),frame({n:full,jump:2,spark:3,glow:true}),frame({n:full,spark:4}),frame({n:full}),frame({n:full,blink:true}),frame({n:full}),frame({n:0}),frame({n:0,blink:true}));
+   let i=0;em.innerHTML=reduce?frame({n:full}):seq[0];
+   if(!reduce)setInterval(()=>{i=(i+1)%seq.length;em.innerHTML=seq[i]},260)}
+  const cv=document.getElementById('stars'),cx=cv.getContext('2d'),P=3;
+  let stars=[],shoot=null,W=0,H=0,t0=0;
+  const draw=t=>{cx.clearRect(0,0,W,H);
+    for(const s of stars){const a=reduce?.6:.35+.65*Math.abs(Math.sin(s.s+t*.001*s.v));
+      cx.fillStyle=`rgba(${s.b?'255,205,215':'210,222,255'},${a.toFixed(2)})`;cx.fillRect(s.x,s.y,1,1);
+      if(s.b&&a>.85){cx.fillStyle=`rgba(255,205,215,${(a-.6).toFixed(2)})`;cx.fillRect(s.x-1,s.y,1,1);cx.fillRect(s.x+1,s.y,1,1);cx.fillRect(s.x,s.y-1,1,1);cx.fillRect(s.x,s.y+1,1,1)}}
+    if(shoot){for(let i=0;i<10;i++){cx.fillStyle=`rgba(255,240,245,${(1-i/10).toFixed(2)})`;cx.fillRect(Math.round(shoot.x-i*2),Math.round(shoot.y-i),2,1)}
+      shoot.x+=2.2;shoot.y+=1.1;if(shoot.x>W+20||shoot.y>H)shoot=null}};
+  const size=()=>{const r=cv.parentElement.getBoundingClientRect();W=Math.ceil(r.width/P);H=Math.ceil(r.height/P);cv.width=W;cv.height=H;
+    stars=Array.from({length:Math.round(W*H/150)},()=>({x:Math.random()*W|0,y:Math.random()*H|0,s:Math.random()*6.28,v:.6+Math.random()*1.8,b:Math.random()<.12}));draw(0)};
+  const loop=t=>{if(!shoot&&t-t0>5200){t0=t;shoot={x:Math.random()*W*.6,y:Math.random()*H*.3}}draw(t);requestAnimationFrame(loop)};
+  const roSky=new ResizeObserver(size);roSky.observe(cv.parentElement);
+  if(!reduce)requestAnimationFrame(loop);
+  const lines={en:'Open to remote work in game dev',ru:'Открыта к удалённой работе в геймдеве'};
+  const ty=document.getElementById('type');let timer=null;
+  const typeLine=l=>{clearTimeout(timer);const full=lines[l];if(reduce){ty.textContent=full;return}
+    let i=0;ty.textContent='';const step=()=>{ty.textContent=full.slice(0,++i);if(i<full.length)timer=setTimeout(step,50)};timer=setTimeout(step,400)};
+  const langBtns=[...document.querySelectorAll('.lang button')];
+  const setLang=l=>{root.dataset.lang=l;root.lang=l;langBtns.forEach(b=>b.setAttribute('aria-pressed',b.dataset.set===l));typeLine(l);
+    document.title=l==='ru'?'Александра Афанасьева — пиксель-арт':'Aleksandra Afanaseva — Pixel Art';try{localStorage.setItem('lang',l)}catch(e){}
+    requestAnimationFrame(drawEdges)};
+  langBtns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.set)));
+  const grid=document.getElementById('treeGrid'),edges=document.getElementById('edges');
+  const nodes=[...grid.querySelectorAll('.node')],byId=Object.fromEntries(nodes.map(n=>[n.dataset.n,n]));
+  function drawEdges(){
+    const g=grid.getBoundingClientRect();let out='';
+    const R=el=>el.getBoundingClientRect();
+    nodes.forEach(n=>{(n.dataset.p||'').split(' ').filter(Boolean).forEach(pid=>{
+      const pn=byId[pid],p=R(pn.querySelector('.ic')),pb=R(pn),c=R(n.querySelector('.ic')),off=n.classList.contains('locked')||n.classList.contains('hold');
+      const x1=Math.round(p.left+p.width/2-g.left),y1=Math.round(pb.bottom+4-g.top),x2=Math.round(c.left+c.width/2-g.left),y2=Math.round(c.top-g.top);
+      const via=n.dataset.via&&byId[n.dataset.via];let d;
+      if(via&&R(via).top>pb.bottom&&R(via).bottom<c.top){
+        const v=R(via),xs=Math.round(v.right+6-g.left),yp=Math.round(p.top+p.height/2-g.top),yb=Math.round((v.bottom+c.top)/2-g.top)+(off?10:0);
+        d=`M${Math.round(p.right-g.left)} ${yp}H${xs}V${yb}H${x2}V${y2}`;
+      }else if(pn.dataset.n==='artist'&&n.dataset.n==='digital'){
+        const ym=Math.round(p.top+p.height/2-g.top);d=`M${Math.round(p.right-g.left)} ${ym}H${x2}V${y2}`;
+      }else{const my=Math.round((y1+y2)/2)+(off?10:0);d=`M${x1} ${y1}V${my}H${x2}V${y2}`}
+      out+=`<path class="${off?'off':'on'}" d="${d}"/>`})});
+    edges.setAttribute('viewBox',`0 0 ${Math.round(g.width)} ${Math.round(g.height)}`);edges.innerHTML=out}
+  const roTree=new ResizeObserver(drawEdges);roTree.observe(grid);
+  document.fonts&&document.fonts.ready.then(drawEdges);
+  const dets=[...document.querySelectorAll('.det')],ids=nodes.filter(n=>!n.dataset.popup).map(n=>n.dataset.n);
+  const select=(id,scroll)=>{
+    nodes.forEach(n=>n.setAttribute('aria-pressed',n.dataset.n===id));
+    dets.forEach(d=>{const on=d.dataset.d===id;d.hidden=!on;d.classList.remove('enter');if(on&&!reduce){void d.offsetWidth;d.classList.add('enter')}});
+    if(scroll)document.getElementById('detail').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})};
+  const pop=document.getElementById('pop');let popFrom=null;
+  const popShut=()=>{pop.classList.remove('on');if(popFrom)popFrom.focus()};
+  document.getElementById('popClose').addEventListener('click',popShut);
+  pop.addEventListener('click',e=>{if(e.target===pop)popShut()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&pop.classList.contains('on'))popShut()});
+  nodes.forEach(n=>n.addEventListener('click',()=>{if(n.dataset.popup){popFrom=n;pop.classList.add('on');document.getElementById('popClose').focus();return}const id=n.dataset.n;if(location.hash!=='#'+id)location.hash=id;else select(id,true)}));
+  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.goto}));
+  const route=scroll=>{const h=location.hash.slice(1);if(ids.includes(h))select(h,scroll);else if(!dets.some(d=>!d.hidden))select('characters',false)};
+  addEventListener('hashchange',()=>route(true));
+
+  let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'en'));
+  route(ids.includes(location.hash.slice(1)));
+  const cp=document.getElementById('copy');
+  cp.addEventListener('click',async()=>{const ok=root.dataset.lang==='ru'?'Скопировано':'Copied';
+    try{await navigator.clipboard.writeText('Biersackneley@gmail.com');cp.textContent=ok}catch(e){cp.textContent='Biersackneley@gmail.com'}});
+  const lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap');
+  let list=[],k=0,last=null;
+  const open=i=>{k=(i+list.length)%list.length;const t=list[k],s=t.querySelector('img'),w=+s.getAttribute('width');
+    img.src=s.getAttribute('src');img.alt=s.alt;cap.textContent=(root.dataset.lang==='ru'?t.dataset.capru:t.dataset.cap)||'';
+    img.style.width=w<400?Math.min(w*4,innerWidth-40)+'px':'';img.style.background=t.classList.contains('light')?'#fff':'#000'};
+  const shut=()=>{lb.classList.remove('on');img.removeAttribute('src');if(last)last.focus()};
+  document.querySelectorAll('.tile').forEach(t=>t.addEventListener('click',()=>{
+    list=[...t.closest('.det').querySelectorAll('.tile')];last=t;open(list.indexOf(t));lb.classList.add('on');document.getElementById('lbClose').focus()}));
+  document.getElementById('lbClose').addEventListener('click',shut);
+  document.getElementById('lbPrev').addEventListener('click',()=>open(k-1));
+  document.getElementById('lbNext').addEventListener('click',()=>open(k+1));
+  lb.addEventListener('click',e=>{if(e.target===lb)shut()});
+  document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')shut();else if(e.key==='ArrowLeft')open(k-1);else if(e.key==='ArrowRight')open(k+1)});
+}
+</script>
+</body>
+</html>
