@@ -123,6 +123,7 @@ h1,h2,h3,h4,.dhead h3,.proj h4,.two h4,.sech h2,.contact h2,.pop h3{font-family:
 .proj+.proj{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .proj h4{font:700 20px "Pixelify Sans",monospace;margin:0 0 8px}
 .sub{font:700 15px "Pixelify Sans",monospace;color:var(--mute);margin:22px 0 12px}
+.vnsprite{margin:0 0 8px}.vnvid{margin:0;max-width:420px}.vnvid video{display:block;width:100%;height:auto;background:#f4efe6;box-shadow:0 0 0 1px var(--line)}
 .grid{display:grid;gap:clamp(10px,1.6vw,18px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g3.two-small{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -271,7 +272,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node unlocked" data-n="fan-art" data-p="digital" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="heart"></span><span class="nm"><span data-t="en">Fan art</span><span data-t="ru">Фан-арт</span></span><span class="st"><span data-t="en">4 works</span><span data-t="ru">4 работы</span></span></button>
         <button class="node unlocked" data-n="process" data-p="digital" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="nm"><span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></span><span class="st"><span data-t="en">Cartoon and realism</span><span data-t="ru">Мульт и реализм</span></span></button>
 
-        <button class="node locked" data-n="vn" data-p="illustration" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="book"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></span><span class="bar2"><b></b></span></button>
+        <button class="node unlocked" data-n="vn" data-p="illustration" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="book"></span><span class="nm"><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></span><span class="st"><span data-t="en">Character and process</span><span data-t="ru">Персонаж и процесс</span></span></button>
         <button class="node locked" data-n="cover" data-p="illustration fan-art" style="grid-row:4;grid-column:2"><span class="ic" data-sprite="scroll"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">Book cover</span><span data-t="ru">Обложка книги</span></span><span class="bar2"><b></b></span></button>
       </div>
     </div>
@@ -367,9 +368,12 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       </article>
 
       <article class="det pxbox" data-d="vn" hidden>
-        <div class="dhead"><span class="ic l" data-sprite="book"></span><div><span class="label"><span data-t="en">Under NDA</span><span data-t="ru">Под NDA</span></span><h3><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></h3></div></div>
-        <p class="lede"><span data-t="en">2D artist on a commercial visual novel: backgrounds and characters. The project is under NDA, so the work can't be shown here yet.</span><span data-t="ru">2D-художница на коммерческой визуальной новелле: фоны и персонажи. Проект под NDA, поэтому показать работы здесь пока нельзя.</span></p>
-        <div class="lockmsg"><span data-t="en">Unlocks after release</span><span data-t="ru">Откроется после релиза</span><span class="bar2"><b></b></span></div>
+        <div class="dhead"><span class="ic" data-sprite="book"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></h3></div></div>
+        <p class="lede"><span data-t="en">An example of a visual novel character: a semi-realistic sprite in two emotions, and the whole process from sketch to final render. The commercial project I draw for is under NDA, so its art will appear here after release.</span><span data-t="ru">Пример персонажа для визуальной новеллы: полуреалистичный спрайт в двух эмоциях и весь процесс от скетча до финального рендера. Коммерческий проект, на котором я работаю, под NDA, поэтому его арты появятся здесь после релиза.</span></p>
+        <p class="sub"><span data-t="en">Character sprite, two emotions</span><span data-t="ru">Спрайт персонажа, две эмоции</span></p>
+        <figure class="vnsprite"><button class="tile mat smooth" data-cap="Visual novel character, two emotions" data-capru="Персонаж визуальной новеллы, две эмоции"><img src="img/vn-sprite.webp" width="4000" height="3000" loading="lazy" alt="Semi-realistic visual novel character sprite shown in two emotions"></button></figure>
+        <p class="sub"><span data-t="en">Process</span><span data-t="ru">Процесс</span></p>
+        <figure class="vnvid"><video src="img/vn-process.mp4" poster="img/vn-process-poster.jpg" width="720" height="960" controls muted loop playsinline preload="none"></video><figcaption><span data-t="en">Sketch, base colours, rendering</span><span data-t="ru">Скетч, базовые цвета, рендер</span></figcaption></figure>
       </article>
 
       <article class="det pxbox" data-d="cover" hidden>
@@ -507,7 +511,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   const grid=document.getElementById('treeGrid'),edges=document.getElementById('edges');
   const nodes=[...grid.querySelectorAll('.node')],byId=Object.fromEntries(nodes.map(n=>[n.dataset.n,n]));
   function drawEdges(){
-    const g=grid.getBoundingClientRect();let out='';
+    const g=grid.getBoundingClientRect();let out='',lo='';
     const R=el=>el.getBoundingClientRect();
     nodes.forEach(n=>{(n.dataset.p||'').split(' ').filter(Boolean).forEach(pid=>{
       const pn=byId[pid],p=R(pn.querySelector('.ic')),pb=R(pn),c=R(n.querySelector('.ic')),off=n.classList.contains('locked')||n.classList.contains('hold');
@@ -519,7 +523,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       }else if(false){
         const ym=Math.round(p.top+p.height/2-g.top);d=`M${Math.round(p.right-g.left)} ${ym}H${x2}V${y2}`;
       }else{const my=Math.round((y1+y2)/2)+(off?10:0);d=`M${x1} ${y1}V${my}H${x2}V${y2}`}
-      out+=`<path class="${off?'off':'on'}" d="${d}"/>`})});
+      const ph=`<path class="${off?'off':'on'}" d="${d}"/>`;if(off)lo+=ph;else out+=ph})});out=lo+out;
     edges.setAttribute('viewBox',`0 0 ${Math.round(g.width)} ${Math.round(g.height)}`);edges.innerHTML=out}
   const roTree=new ResizeObserver(drawEdges);roTree.observe(grid);
   document.fonts&&document.fonts.ready.then(drawEdges);
