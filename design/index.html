@@ -205,6 +205,20 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 .tr span{display:flex;align-items:center;gap:8px}
 .tr i{display:inline-block;height:10px;flex:none}
 .tr i.t1{width:18px;background:#5fb7a0}.tr i.t2{width:36px;background:#ffd36b}.tr i.t3{width:54px;background:#d9566f}.tr i.tx{width:54px;background:repeating-linear-gradient(90deg,#d9566f 0 6px,#ffd36b 6px 12px)}
+.feat{margin:6px 0 4px;padding:18px;border:2px solid var(--gold);background:#1a1810}
+.feat h4{font:500 24px "Pixelify Sans",monospace;margin:4px 0 8px}
+.feat p{margin:0 0 10px;max-width:70ch}
+.feat .quote{color:var(--gold);font-style:italic}
+.chips2{display:flex;flex-wrap:wrap;gap:8px}
+.mapwrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:start;margin:6px 0 4px}
+.smap{display:grid;grid-template-rows:repeat(8,30px);gap:8px;padding:12px;background:var(--panel2);border:2px solid var(--line)}
+.smap .row{display:flex;justify-content:center;gap:10px}
+.smap i{width:30px;height:30px;display:grid;place-items:center;font:700 13px "Pixelify Sans",monospace;font-style:normal;border:2px solid var(--rose);color:var(--ink);background:#14282a}
+.smap i.S{border-color:var(--gold);color:var(--gold)}.smap i.T{border-color:#d9566f;color:#ffb3c0}.smap i.H,.smap i.B{border-color:#5b7fc0;color:#c9d3ea}
+.legend2{font-size:13.5px;color:var(--mute)}.legend2 b{color:var(--ink);font-family:"Pixelify Sans",monospace;margin-left:8px}
+@media(max-width:640px){.mapwrap{grid-template-columns:minmax(0,1fr)}.smap{justify-self:center}}
+.g4s{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:820px){.g4s{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .note{margin:0;padding:12px 14px;border:2px dashed var(--gold);color:var(--mute);font-size:15px;max-width:66ch}
 @media(max-width:520px){.tr{grid-template-columns:minmax(0,1fr)}.tr.th{display:none}}
 </style>
@@ -257,12 +271,12 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
         <button class="node root unlocked" data-n="designer" style="grid-row:1;grid-column:2"><span class="ic" data-sprite="dice"></span><span class="nm"><span data-t="en">Game designer</span><span data-t="ru">Геймдизайнер</span></span><span class="st"><span data-t="en">Base class</span><span data-t="ru">Базовый класс</span></span></button>
 
         <button class="node unlocked" data-n="systems" data-p="designer" style="grid-row:2;grid-column:1"><span class="ic" data-sprite="gears"></span><span class="nm"><span data-t="en">Systems design</span><span data-t="ru">Дизайн систем</span></span><span class="st"><span data-t="en">2 projects</span><span data-t="ru">2 проекта</span></span></button>
-        <button class="node unlocked" data-n="level" data-p="designer" style="grid-row:2;grid-column:2"><span class="ic" data-sprite="map"></span><span class="nm"><span data-t="en">Level design</span><span data-t="ru">Левел-дизайн</span></span><span class="st"><span data-t="en">3 projects</span><span data-t="ru">3 проекта</span></span></button>
+        <button class="node unlocked" data-n="level" data-p="designer" style="grid-row:2;grid-column:2"><span class="ic" data-sprite="map"></span><span class="nm"><span data-t="en">Level design</span><span data-t="ru">Левел-дизайн</span></span><span class="st"><span data-t="en">4 projects</span><span data-t="ru">4 проекта</span></span></button>
         <button class="node unlocked" data-n="production" data-p="designer" style="grid-row:2;grid-column:3"><span class="ic" data-sprite="clip"></span><span class="nm"><span data-t="en">Production</span><span data-t="ru">Продакшен</span></span><span class="st"><span data-t="en">Team lead roles</span><span data-t="ru">Ведение команды</span></span></button>
 
         <button class="node unlocked" data-n="combat" data-p="systems" style="grid-row:3;grid-column:1"><span class="ic" data-sprite="sword"></span><span class="nm"><span data-t="en">Combat design</span><span data-t="ru">Комбат-дизайн</span></span><span class="st"><span data-t="en">Analysis</span><span data-t="ru">Анализ</span></span></button>
-        <button class="node unlocked" data-n="game-jams" data-p="level production" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">Game designer</span><span data-t="ru">Геймдизайнер</span></span></button>
-        <button class="node locked" data-n="ux" data-p="production" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="eye"></span><span class="lk" data-sprite="lock"></span><span class="nm"><span data-t="en">UX &amp; accessibility</span><span data-t="ru">UX и доступность</span></span><span class="bar2"><b></b></span></button>
+        <button class="node unlocked" data-n="game-jams" data-p="level production" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="pad"></span><span class="nm"><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></span><span class="st"><span data-t="en">3 jams</span><span data-t="ru">3 джема</span></span></button>
+        <button class="node unlocked" data-n="ux" data-p="production" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="eye"></span><span class="nm"><span data-t="en">UX design</span><span data-t="ru">UX-дизайн</span></span><span class="st"><span data-t="en">2 systems</span><span data-t="ru">2 системы</span></span></button>
       </div>
     </div>
     <p class="hint"><span data-t="en">Glowing nodes are unlocked. Locked ones are skills I'm levelling up right now.</span><span data-t="ru">Светящиеся навыки открыты, закрытые я прокачиваю прямо сейчас.</span></p>
@@ -291,22 +305,44 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
             <ul class="ticks" data-t="ru"><li>Координация департаментов в командах около 10 человек</li><li>Оценка объёма, постановка и распределение задач</li><li>Честные постмортемы и исправление процессов</li><li>Быстро осваиваю новые инструменты</li></ul>
           </div>
         </div>
+        <div class="feat">
+          <span class="label gd"><span data-t="en">Featured project</span><span data-t="ru">Главный проект</span></span>
+          <h4>The Spectre Spectacle</h4>
+          <p><span data-t="en">A narrative roguelite in a dark fairy-tale theatre, our diploma game in Unity for Steam. Ana and I are the two game designers and the glue of a team of 12: 5 programmers and 5 artists. I own level design, gameplay, enemies, UX, VFX and sound design, and QA, and co-manage the project. Vertical slice in January 2027, Steam release planned for 2027.</span><span data-t="ru">Нарративный roguelite в мрачном сказочном театре, наша дипломная игра на Unity для Steam. Мы с Аной — два геймдизайнера и связующее звено команды из 12 человек: 5 программистов и 5 художников. На мне левел-дизайн, геймплей, враги, UX, дизайн VFX и звука и QA, плюс совместное ведение проекта. Вертикальный срез в январе 2027, релиз в Steam запланирован на 2027.</span></p>
+          <p class="quote"><span data-t="en">My standard for the GDD: clear and detailed enough that the team could finish the game if both designers disappeared.</span><span data-t="ru">Мой стандарт для GDD: документ должен быть настолько понятным и подробным, чтобы команда могла закончить игру, даже если оба дизайнера исчезнут.</span></p>
+          <div class="chips2"><button class="go" data-goto="level">▶ <span data-t="en">Scene map &amp; rooms</span><span data-t="ru">Карта и комнаты</span></button><button class="go" data-goto="systems">▶ <span data-t="en">Enemies &amp; mini-bosses</span><span data-t="ru">Враги и мини-боссы</span></button><button class="go" data-goto="ux">▶ <span data-t="en">Dialogue &amp; save systems</span><span data-t="ru">Диалоги и сохранения</span></button><button class="go" data-goto="production">▶ <span data-t="en">Team process</span><span data-t="ru">Процесс команды</span></button></div>
+        </div>
         <p class="go" style="cursor:default;margin-top:18px">▶ <span data-t="en">Pick a skill in the tree above to see the work</span><span data-t="ru">Выберите навык в древе выше, чтобы увидеть работы</span></p>
       </article>
 
       <article class="det pxbox" data-d="systems" hidden>
         <div class="dhead"><span class="ic" data-sprite="gears"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Systems design</span><span data-t="ru">Дизайн систем</span></h3></div></div>
         <div class="proj">
-          <h4><span data-t="en">Roguelite for Steam: enemy attack system</span><span data-t="ru">Roguelite для Steam: система атак врагов</span></h4>
-          <div class="tags"><span data-t="en">Diploma project</span><span data-t="ru">Дипломный проект</span><span>Unity</span><span data-t="en">Release 2027</span><span data-t="ru">Релиз 2027</span></div>
-          <p class="lede"><span data-t="en">Every enemy gets one or more of three attack types: Simple, Heavy and Distant. Each type has three power tiers, and the tier belongs to the run, not to the enemy, so the whole run gets harder as a set. The mini-boss always fights one tier ahead, as a preview of the next run.</span><span data-t="ru">Каждому врагу назначается один или несколько из трёх типов атак: простая, тяжёлая и дальняя. У каждого типа три тира силы, и тир привязан к забегу, а не к врагу, поэтому сложность растёт для всего забега сразу. Мини-босс всегда сражается на тир выше, это превью следующего забега.</span></p>
-          <div class="tiers" role="table" aria-label="Tier progression">
+          <h4>The Spectre Spectacle: <span data-t="en">enemies and mini-bosses</span><span data-t="ru">враги и мини-боссы</span></h4>
+          <div class="tags"><span data-t="en">Diploma project</span><span data-t="ru">Дипломный проект</span><span>Unity</span><span data-t="en">Narrative roguelite</span><span data-t="ru">Нарративный roguelite</span></div>
+          <p class="lede"><span data-t="en">Enemies combine Simple, Heavy and Distant attacks, and their power tier belongs to the run, not to the enemy. On top of that I designed a mini-boss preview system with two jobs:</span><span data-t="ru">Враги комбинируют простые, тяжёлые и дальние атаки, а тир силы привязан к забегу, а не к врагу. Поверх этого я спроектировала систему превью через мини-боссов с двумя задачами:</span></p>
+          <div class="quest">
+            <div><b><span data-t="en">New mechanic introduction</span><span data-t="ru">Ввод новой механики</span></b><span><span data-t="en">A mechanic debuts on a mini-boss and becomes real for regular enemies on the next run.</span><span data-t="ru">Механика впервые появляется у мини-босса и со следующего забега переходит к обычным врагам.</span></span></div>
+            <div><b><span data-t="en">Tier-scaling preview</span><span data-t="ru">Превью следующего тира</span></b><span><span data-t="en">The mini-boss shows a heavier version of an attack the player already knows.</span><span data-t="ru">Мини-босс показывает утяжелённую версию атаки, которую игрок уже знает.</span></span></div>
+          </div>
+          <div class="tiers" role="table" aria-label="Tier progression" style="margin-top:16px">
             <div class="tr th" role="row"><span role="columnheader"></span><span role="columnheader"><span data-t="en">Enemies</span><span data-t="ru">Враги</span></span><span role="columnheader"><span data-t="en">Run boss</span><span data-t="ru">Босс забега</span></span></div>
             <div class="tr" role="row"><b role="rowheader"><span data-t="en">Run 1</span><span data-t="ru">Забег 1</span></b><span role="cell"><i class="t1"></i>T1</span><span role="cell"><i class="t2"></i><span data-t="en">Mini-boss T2</span><span data-t="ru">Мини-босс T2</span></span></div>
             <div class="tr" role="row"><b role="rowheader"><span data-t="en">Run 2</span><span data-t="ru">Забег 2</span></b><span role="cell"><i class="t2"></i>T2</span><span role="cell"><i class="t3"></i><span data-t="en">Mini-boss T3</span><span data-t="ru">Мини-босс T3</span></span></div>
-            <div class="tr" role="row"><b role="rowheader"><span data-t="en">Run 3</span><span data-t="ru">Забег 3</span></b><span role="cell"><i class="t3"></i>T3</span><span role="cell"><i class="tx"></i><span data-t="en">Final boss: unique attacks</span><span data-t="ru">Финальный босс: уникальные атаки</span></span></div>
+            <div class="tr" role="row"><b role="rowheader"><span data-t="en">Run 3</span><span data-t="ru">Забег 3</span></b><span role="cell"><i class="t3"></i>T3</span><span role="cell"><i class="tx"></i><span data-t="en">Act boss: unique attacks</span><span data-t="ru">Босс акта: уникальные атаки</span></span></div>
           </div>
-          <p class="note"><span data-t="en">Open design question I'm still solving: the final boss can't just be "tier 4". It needs unique attacks, ideally built from the same three-type toolkit.</span><span data-t="ru">Открытый вопрос, который я сейчас решаю: финальный босс не может быть просто «тиром 4». Ему нужны уникальные атаки, по возможности собранные из того же набора трёх типов.</span></p>
+          <div class="two" style="margin-top:6px">
+            <div>
+              <h4><span data-t="en">Examples from the GDD</span><span data-t="ru">Примеры из GDD</span></h4>
+              <ul class="ticks" data-t="en"><li>Princess Pirlipat uses both preview functions at once</li><li>The Rabbit's bomb drop is a Tier 2 evolution of his clock flail, not a new mechanic</li><li>The Flower appears only after the Bouquet mini-boss spawns it, and learns to burrow after the Cheshire mini-boss</li><li>The Deck of Cards spawner exists to overwhelm: up to 15 soldiers alive, only after the mini-boss introduces spawning</li></ul>
+              <ul class="ticks" data-t="ru"><li>Принцесса Пирлипат использует обе функции превью одновременно</li><li>Бомбы Кролика — эволюция его кистеня-часов на Тире 2, а не новая механика</li><li>Цветок появляется только после мини-босса Букета, который его порождает, и учится закапываться после мини-босса Чешира</li><li>Колода карт нужна, чтобы задавить игрока: до 15 солдат одновременно, и только после того, как мини-босс введёт механику спавна</li></ul>
+            </div>
+            <div>
+              <h4><span data-t="en">Base enemy rules</span><span data-t="ru">Базовые правила врагов</span></h4>
+              <ul class="ticks" data-t="en"><li>Once an enemy detects the player, it never loses them for the rest of the fight</li><li>Idle always means patrolling, enemies never stand still</li><li>Each act ends with a boss, Act 2's is the Nutcracker Twins</li></ul>
+              <ul class="ticks" data-t="ru"><li>Заметив игрока, враг больше не теряет его до конца боя</li><li>В покое враг всегда патрулирует и никогда не стоит на месте</li><li>Каждый акт заканчивается боссом, во втором акте это Близнецы-Щелкунчики</li></ul>
+            </div>
+          </div>
         </div>
         <div class="proj">
           <h4>Garden of Memories: <span data-t="en">mini-games and enemy AI</span><span data-t="ru">мини-игры и ИИ врагов</span></h4>
@@ -322,14 +358,28 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       <article class="det pxbox" data-d="level" hidden>
         <div class="dhead"><span class="ic" data-sprite="map"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Level design</span><span data-t="ru">Левел-дизайн</span></h3></div></div>
         <div class="proj">
+          <h4>The Spectre Spectacle: <span data-t="en">scene map and stage-set rooms</span><span data-t="ru">карта сцены и комнаты-декорации</span></h4>
+          <div class="tags"><span data-t="en">Diploma project</span><span data-t="ru">Дипломный проект</span><span data-t="en">Rewritten from zero</span><span data-t="ru">Переписано с нуля</span><span>Figma</span><span>Excel</span></div>
+          <p class="lede"><span data-t="en">I rewrote the level design section of the GDD from zero: hub, map, rooms, encounters, rewards and traps. Arena layouts are built in Figma, probabilities and numbers in Excel.</span><span data-t="ru">Я переписала раздел левел-дизайна в GDD с нуля: хаб, карта, комнаты, энкаунтеры, награды и ловушки. Раскладки арен собраны в Figma, вероятности и цифры посчитаны в Excel.</span></p>
+          <div class="mapwrap">
+            <div class="smap" id="smap" aria-label="Example scene map"></div>
+            <div>
+              <ul class="ticks" data-t="en"><li>Procedural 8 × 4 grid, the player always visits 8 nodes</li><li>Row 1 is always a Fight that starts with the weapon-choice Merchant, row 8 is always the Final Fight</li><li>Rows 2 to 7 are chaotic: 1 to 4 nodes, random links, random types</li><li>Exactly one Shop per map, placed on a busy node; Treasure is a random type at about 15%</li><li>One Fight node = 4 to 5 rooms, each act has its own pool of 8 to 10 arenas</li></ul>
+              <ul class="ticks" data-t="ru"><li>Процедурная сетка 8 × 4, игрок всегда проходит 8 узлов</li><li>Первый ряд — всегда бой, который начинается с Торговца и выбора оружия, восьмой — всегда финальный бой</li><li>Ряды со 2 по 7 хаотичные: от 1 до 4 узлов, случайные связи и типы</li><li>Ровно один магазин на карту, на самом нагруженном узле; сокровище — случайный тип, примерно 15%</li><li>Один узел боя — 4–5 комнат, у каждого акта свой пул из 8–10 арен</li></ul>
+              <p class="legend2"><b>F</b> <span data-t="en">Fight</span><span data-t="ru">Бой</span> <b>H</b> <span data-t="en">More health</span><span data-t="ru">Здоровье</span> <b>B</b> <span data-t="en">More buttons</span><span data-t="ru">Пуговицы</span> <b>S</b> <span data-t="en">Shop</span><span data-t="ru">Магазин</span> <b>T</b> <span data-t="en">Treasure</span><span data-t="ru">Сокровище</span></p>
+            </div>
+          </div>
+          <p class="note" style="margin-top:14px"><span data-t="en">Rooms are stage sets with no doors. The player stays in place and pulls a lever, the scenery changes around them, and enemies are lowered in on strings like props.</span><span data-t="ru">Комнаты — это театральные декорации без дверей. Игрок остаётся на месте и дёргает рычаг, декорации меняются вокруг него, а враги спускаются на верёвках, как реквизит.</span></p>
+        </div>
+        <div class="proj">
           <h4>Garden of Memories</h4>
           <div class="tags"><span data-t="en">University team project</span><span data-t="ru">Университетский командный проект</span><span data-t="en">3 levels</span><span data-t="ru">3 уровня</span></div>
           <p class="lede"><span data-t="en">The town changes every day, so each level gets its own colour to mark the new areas. Enemies guard key objects, making them easier or harder to reach depending on the zone, and the house is the one safe place. From paper sketches to blockout to final levels.</span><span data-t="ru">Город меняется каждый день, поэтому у каждого уровня свой цвет, отмечающий новые зоны. Враги охраняют ключевые предметы, и добраться до них проще или сложнее в зависимости от зоны, а дом остаётся единственным безопасным местом. Путь от набросков на бумаге через блокаут к финальным уровням.</span></p>
-          <div class="grid g3 two-small">
-            <figure class="feature"><button class="tile smooth" data-cap="Garden of Memories, top-down maps of levels 1 to 3" data-capru="Garden of Memories, карты уровней 1–3 сверху"><img src="img/gom-level-maps.webp" width="596" height="336" loading="lazy" alt="Slide with top-down maps of three levels"></button></figure>
+          <div class="grid g4s">
+            <figure><button class="tile smooth" data-cap="Garden of Memories, top-down maps of levels 1 to 3" data-capru="Garden of Memories, карты уровней 1–3 сверху"><img src="img/gom-level-maps.webp" width="596" height="336" loading="lazy" alt="Slide with top-down maps of three levels"></button></figure>
             <figure><button class="tile smooth" data-cap="Garden of Memories, level design notes and sketches" data-capru="Garden of Memories, принципы и наброски уровней"><img src="img/gom-level-design.webp" width="596" height="336" loading="lazy" alt="Slide with level design notes and paper sketches"></button></figure>
             <figure><button class="tile smooth" data-cap="Garden of Memories, blockout" data-capru="Garden of Memories, блокаут"><img src="img/gom-blockout.webp" width="596" height="336" loading="lazy" alt="Slide with blockout screenshots"></button></figure>
-            <figure class="feature"><button class="tile smooth" data-cap="Garden of Memories, final levels" data-capru="Garden of Memories, финальные уровни"><img src="img/gom-level-final.webp" width="596" height="336" loading="lazy" alt="Slide with final level screenshots"></button></figure>
+            <figure><button class="tile smooth" data-cap="Garden of Memories, final levels" data-capru="Garden of Memories, финальные уровни"><img src="img/gom-level-final.webp" width="596" height="336" loading="lazy" alt="Slide with final level screenshots"></button></figure>
           </div>
         </div>
         <div class="proj">
@@ -352,7 +402,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       <article class="det pxbox" data-d="production" hidden>
         <div class="dhead"><span class="ic" data-sprite="clip"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Production</span><span data-t="ru">Продакшен</span></h3></div></div>
         <div class="quest">
-          <div><b><span data-t="en">Roguelite for Steam</span><span data-t="ru">Roguelite для Steam</span></b><span><span data-t="en">Started as systems designer, now the producer. Release and festival in 2027.</span><span data-t="ru">Начинала как геймдизайнер систем, сейчас продюсер. Релиз и фестиваль в 2027.</span></span></div>
+          <div><b>The Spectre Spectacle</b><span><span data-t="en">Co-lead with Ana for a team of 12. Weekly sprints reviewed at a 4-hour Tuesday all-team meeting, extra designer calls, tasks in Plaky, code on GitHub, a shared production plan. Vertical slice due 15 January 2027.</span><span data-t="ru">Веду проект вместе с Аной, команда из 12 человек. Недельные спринты, которые разбираем на общей 4-часовой встрече по вторникам, отдельные созвоны дизайнеров, задачи в Plaky, код на GitHub, общий производственный план. Вертикальный срез — 15 января 2027.</span></span></div>
           <div><b>Garden of Memories</b><span><span data-t="en">Game designer, art and narrative coordinator, level designer, sound designer and 2D artist in a team of 10.</span><span data-t="ru">Геймдизайнер, координатор арта и нарратива, левел-дизайнер, саунд-дизайнер и 2D-художница в команде из 10 человек.</span></span></div>
         </div>
         <div class="proj">
@@ -391,7 +441,12 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
       <article class="det pxbox" data-d="game-jams" hidden>
         <div class="dhead"><span class="ic" data-sprite="pad"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Game jams</span><span data-t="ru">Геймджемы</span></h3></div></div>
-        <p class="lede"><span data-t="en">Fast 2–3 day jams where I worked as a game designer.</span><span data-t="ru">Короткие джемы по 2–3 дня, где я работала геймдизайнером.</span></p>
+        <p class="lede"><span data-t="en">Three 2–3 day jams. I was a game designer on all of them, and a 2D artist on two.</span><span data-t="ru">Три джема по 2–3 дня. На всех я была геймдизайнером, а на двух ещё и 2D-художницей.</span></p>
+        <div class="proj">
+          <h4><span data-t="en">Storefronts jam</span><span data-t="ru">Джем с витринами</span></h4>
+          <div class="tags"><span data-t="en">Game jam, 2024</span><span data-t="ru">Геймджем, 2024</span><span data-t="en">Game design, pixel art</span><span data-t="ru">Геймдизайн, пиксель-арт</span></div>
+          <div class="grid g3"><figure><button class="tile" data-cap="Game jam 2024, storefront art" data-capru="Геймджем 2024, арт витрины"><img src="img/shop-cafe.webp" width="1600" height="1600" loading="lazy" alt="Pixel art café front"></button></figure></div>
+        </div>
         <div class="proj">
           <h4>ZEITNOT</h4>
           <div class="tags"><span>U-JAM 2025</span><span data-t="en">Game designer</span><span data-t="ru">Геймдизайнер</span></div>
@@ -408,9 +463,25 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       </article>
 
       <article class="det pxbox" data-d="ux" hidden>
-        <div class="dhead"><span class="ic l" data-sprite="eye"></span><div><span class="label"><span data-t="en">Levelling up</span><span data-t="ru">Прокачиваю</span></span><h3><span data-t="en">UX &amp; accessibility</span><span data-t="ru">UX и доступность</span></h3></div></div>
-        <p class="lede"><span data-t="en">My bachelor's thesis connects UX with cognitive accessibility, building on my first degree in special education. Supervised by Alberto Arjona Molina.</span><span data-t="ru">Моя дипломная работа связывает UX и когнитивную доступность и опирается на моё первое образование в специальной педагогике. Научный руководитель Alberto Arjona Molina.</span></p>
-        <div class="lockmsg"><span data-t="en">Research in progress</span><span data-t="ru">Исследование идёт</span><span class="bar2"><b></b></span></div>
+        <div class="dhead"><span class="ic" data-sprite="eye"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">UX design</span><span data-t="ru">UX-дизайн</span></h3></div></div>
+        <div class="proj">
+          <h4>The Spectre Spectacle: <span data-t="en">dialogue system</span><span data-t="ru">система диалогов</span></h4>
+          <p class="lede"><span data-t="en">Dialogue fits the theatre: text appears on a sign lowered on ropes above the speaker's shoulder, stays down for the whole dialogue and rises at the end, with a rope creak. No voice acting and little text overall.</span><span data-t="ru">Диалоги вписаны в театр: текст появляется на табличке, которая спускается на верёвках над плечом говорящего, висит весь диалог и уезжает вверх в конце, со скрипом верёвки. Без озвучки, и текста в целом немного.</span></p>
+          <div class="quest">
+            <div><b>Bark</b><span><span data-t="en">Automatic line, the player keeps moving.</span><span data-t="ru">Автоматическая реплика, игрок продолжает двигаться.</span></span></div>
+            <div><b>Conversation</b><span><span data-t="en">Started only by the player with Interact. NPCs never push a conversation, never in combat, and there's a skip-all button.</span><span data-t="ru">Начинается только игроком через «Взаимодействие». NPC никогда не навязывают разговор, в бою диалогов нет, есть кнопка «пропустить всё».</span></span></div>
+          </div>
+        </div>
+        <div class="proj">
+          <h4>The Spectre Spectacle: <span data-t="en">save system</span><span data-t="ru">система сохранений</span></h4>
+          <ul class="ticks" data-t="en"><li>Automatic saves only, taken right before a run starts, so quitting can't escape a fight</li><li>Quitting mid-run counts like death but harsher: Tickets earned that run are lost on quit and kept on death</li><li>Reset Progress in Settings; save slots stay a post-vertical-slice idea</li></ul>
+          <ul class="ticks" data-t="ru"><li>Только автосохранения прямо перед началом забега, поэтому выходом из игры нельзя сбежать из боя</li><li>Выход посреди забега считается как смерть, только жёстче: билеты за забег при выходе сгорают, а при смерти остаются</li><li>Сброс прогресса в настройках; слоты сохранений — идея на после вертикального среза</li></ul>
+        </div>
+        <div class="proj">
+          <h4><span data-t="en">Thesis: UX and cognitive accessibility</span><span data-t="ru">Диплом: UX и когнитивная доступность</span></h4>
+          <p class="lede"><span data-t="en">Builds on my first degree in special education. Supervised by Alberto Arjona Molina.</span><span data-t="ru">Опирается на моё первое образование в специальной педагогике. Научный руководитель Alberto Arjona Molina.</span></p>
+          <div class="lockmsg"><span data-t="en">Research in progress</span><span data-t="ru">Исследование идёт</span><span class="bar2"><b></b></span></div>
+        </div>
       </article>
     </div>
   </section>
@@ -428,7 +499,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   <section class="sec wrap" aria-labelledby="achh" style="padding-top:0">
     <div class="sech"><h2 id="achh"><span data-t="en">Achievements</span><span data-t="ru">Достижения</span></h2></div>
     <div class="ach">
-      <div><span data-sprite="clip"></span><span><b><span data-t="en">Producer</span><span data-t="ru">Продюсер</span></b><span><span data-t="en">Steam roguelite, release 2027</span><span data-t="ru">Roguelite для Steam, релиз 2027</span></span></span></div>
+      <div><span data-sprite="clip"></span><span><b><span data-t="en">Producer</span><span data-t="ru">Продюсер</span></b><span>The Spectre Spectacle</span></span></div>
       <div><span data-sprite="pad"></span><span><b><span data-t="en">Jam survivor ×3</span><span data-t="ru">Пережила 3 джема</span></b><span><span data-t="en">2–3 days each</span><span data-t="ru">По 2–3 дня</span></span></span></div>
       <div><span data-sprite="map"></span><span><b><span data-t="en">Many hats</span><span data-t="ru">Много ролей</span></b><span><span data-t="en">5 roles on one team project</span><span data-t="ru">5 ролей в одном командном проекте</span></span></span></div>
       <div><span data-sprite="heart"></span><span><b><span data-t="en">Co-op master</span><span data-t="ru">Мастер кооператива</span></b><span><span data-t="en">Big teams, clear tasks, calm deadlines</span><span data-t="ru">Большие команды, ясные задачи, спокойные дедлайны</span></span></span></div>
@@ -454,6 +525,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
     <div class="mail">
       <a href="mailto:Biersackneley@gmail.com">Biersackneley@gmail.com</a>
       <button id="copy" type="button"><span data-t="en">Copy</span><span data-t="ru">Скопировать</span></button>
+      <a href="https://t.me/tinyelf" target="_blank" rel="noopener">Telegram @tinyelf</a>
       <a href="../" style="font-size:16px"><span data-t="en">▶ Pixel art portfolio</span><span data-t="ru">▶ Портфолио пиксель-арта</span></a>
     </div>
   </div>
@@ -585,6 +657,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
   let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
   setLang(saved||((navigator.language||'').toLowerCase().startsWith('ru')?'ru':'en'));
   route(ids.includes(location.hash.slice(1)));
+  {const m=document.getElementById('smap');if(m){const rows=[['F'],['F','H'],['B','F','F'],['F','S','T','F'],['H','F'],['F','B','F'],['T','F'],['F']];m.innerHTML=rows.map(r=>'<div class="row">'+r.map(t=>'<i class="'+t+'">'+t+'</i>').join('')+'</div>').join('')}}
   const cp=document.getElementById('copy');
   cp.addEventListener('click',async()=>{const ok=root.dataset.lang==='ru'?'Скопировано':'Copied';
     try{await navigator.clipboard.writeText('Biersackneley@gmail.com');cp.textContent=ok}catch(e){cp.textContent='Biersackneley@gmail.com'}});
