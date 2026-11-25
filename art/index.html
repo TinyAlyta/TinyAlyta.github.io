@@ -123,7 +123,7 @@ h1,h2,h3,h4,.dhead h3,.proj h4,.two h4,.sech h2,.contact h2,.pop h3{font-family:
 .proj+.proj{margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
 .proj h4{font:700 20px "Pixelify Sans",monospace;margin:0 0 8px}
 .sub{font:700 15px "Pixelify Sans",monospace;color:var(--mute);margin:22px 0 12px}
-.vnsprite{margin:0 0 8px}
+.vnsprite{margin:0 0 8px}.vids figure{margin:0}.vids video{display:block;width:100%;height:auto;background:#f4efe6;box-shadow:0 0 0 1px var(--line)}@media(max-width:640px){.vids{grid-template-columns:1fr}}
 .grid{display:grid;gap:clamp(10px,1.6vw,18px)}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .g3.two-small{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -271,7 +271,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
 
         <button class="node unlocked" data-n="illustration" data-p="digital" style="grid-row:3;grid-column:1"><span class="ic" data-sprite="face"></span><span class="nm"><span data-t="en">Illustration</span><span data-t="ru">Иллюстрация</span></span><span class="st"><span data-t="en">3 works</span><span data-t="ru">3 работы</span></span></button>
         <button class="node unlocked" data-n="fan-art" data-p="digital" style="grid-row:3;grid-column:2"><span class="ic" data-sprite="heart"></span><span class="nm"><span data-t="en">Fan art</span><span data-t="ru">Фан-арт</span></span><span class="st"><span data-t="en">3 works</span><span data-t="ru">3 работы</span></span></button>
-        <button class="node unlocked" data-n="process" data-p="digital" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="nm"><span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></span><span class="st"><span data-t="en">Cartoon and realism</span><span data-t="ru">Мульт и реализм</span></span></button>
+        <button class="node unlocked" data-n="process" data-p="digital" style="grid-row:3;grid-column:3"><span class="ic" data-sprite="brush"></span><span class="nm"><span data-t="en">Process</span><span data-t="ru">Процесс</span></span><span class="st"><span data-t="en">Pipeline and speedpaints</span><span data-t="ru">Пайплайн и спидпейнты</span></span></button>
 
         <button class="node unlocked" data-n="faces" data-p="illustration" style="grid-row:4;grid-column:1"><span class="ic" data-sprite="masks"></span><span class="nm"><span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></span><span class="st"><span data-t="en">4 works</span><span data-t="ru">4 работы</span></span></button>
         <button class="node unlocked" data-n="vn" data-p="faces" style="grid-row:5;grid-column:1"><span class="ic" data-sprite="book"></span><span class="nm"><span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></span><span class="st"><span data-t="en">Character sprite</span><span data-t="ru">Спрайт персонажа</span></span></button>
@@ -308,7 +308,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       <article class="det pxbox" data-d="digital" hidden>
         <div class="dhead"><span class="ic" data-sprite="tablet"></span><div><span class="label on"><span data-t="en">Main branch</span><span data-t="ru">Основная ветка</span></span><h3><span data-t="en">2D digital artist</span><span data-t="ru">2D digital-художница</span></h3></div></div>
         <p class="lede"><span data-t="en">Choose one of the skills below to see examples of my work in a particular style or format.</span><span data-t="ru">Выберите один из навыков ниже, чтобы посмотреть примеры моих работ в том или ином стиле и формате.</span></p>
-        <div class="chips2"><button class="go" data-goto="illustration">▶ <span data-t="en">Illustration</span><span data-t="ru">Иллюстрация</span></button><button class="go" data-goto="faces">▶ <span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></button><button class="go" data-goto="concepts">▶ <span data-t="en">Concept art</span><span data-t="ru">Концепт-арт</span></button><button class="go" data-goto="vn">▶ <span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></button><button class="go" data-goto="fan-art">▶ <span data-t="en">Fan art</span><span data-t="ru">Фан-арт</span></button><button class="go" data-goto="process">▶ <span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></button><button class="go" data-goto="anatomy">▶ <span data-t="en">Anatomy</span><span data-t="ru">Анатомия</span></button><button class="go" data-goto="styles">▶ <span data-t="en">Working with style</span><span data-t="ru">Работа со стилем</span></button></div>
+        <div class="chips2"><button class="go" data-goto="illustration">▶ <span data-t="en">Illustration</span><span data-t="ru">Иллюстрация</span></button><button class="go" data-goto="faces">▶ <span data-t="en">Faces &amp; emotion</span><span data-t="ru">Лица и эмоции</span></button><button class="go" data-goto="concepts">▶ <span data-t="en">Concept art</span><span data-t="ru">Концепт-арт</span></button><button class="go" data-goto="vn">▶ <span data-t="en">Visual novel</span><span data-t="ru">Визуальная новелла</span></button><button class="go" data-goto="fan-art">▶ <span data-t="en">Fan art</span><span data-t="ru">Фан-арт</span></button><button class="go" data-goto="process">▶ <span data-t="en">Process</span><span data-t="ru">Процесс</span></button><button class="go" data-goto="anatomy">▶ <span data-t="en">Anatomy</span><span data-t="ru">Анатомия</span></button><button class="go" data-goto="styles">▶ <span data-t="en">Working with style</span><span data-t="ru">Работа со стилем</span></button></div>
       </article>
 
       <article class="det pxbox" data-d="illustration" hidden>
@@ -330,7 +330,7 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
       </article>
 
       <article class="det pxbox" data-d="process" hidden>
-        <div class="dhead"><span class="ic" data-sprite="brush"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Range &amp; process</span><span data-t="ru">Диапазон и процесс</span></h3></div></div>
+        <div class="dhead"><span class="ic" data-sprite="brush"></span><div><span class="label on"><span data-t="en">Unlocked skill</span><span data-t="ru">Открытый навык</span></span><h3><span data-t="en">Process</span><span data-t="ru">Процесс</span></h3></div></div>
         <p class="lede"><span data-t="en">Pipeline</span><span data-t="ru">Пайплайн</span></p>
         <p class="sub"><span data-t="en">Cartoon</span><span data-t="ru">Мультяшный стиль</span></p>
         <div class="steps">
@@ -348,6 +348,8 @@ footer{background:var(--sky);color:#7f8fb1;font-size:13px;padding:0 0 28px}
           <figure><button class="tile mat smooth" data-cap="Realism, 04 colour" data-capru="Реализм, 04 цвет"><img src="img/proc-real-4.webp" width="844" height="900" loading="lazy" alt="Colour stage"></button><figcaption>04 <span data-t="en">Colour</span><span data-t="ru">Цвет</span></figcaption></figure>
           <figure><button class="tile mat smooth" data-cap="Realism, 05 final" data-capru="Реализм, 05 финал"><img src="img/proc-real-5.webp" width="844" height="900" loading="lazy" alt="Final image"></button><figcaption>05 <span data-t="en">Final</span><span data-t="ru">Финал</span></figcaption></figure>
         </div>
+              <p class="sub"><span data-t="en">Speedpaints</span><span data-t="ru">Спидпейнты</span></p>
+        <div class="grid g3 vids"><figure><video src="img/speed-1.mp4" poster="img/speed-1.jpg" width="720" height="1108" controls muted loop playsinline preload="none"></video></figure><figure><video src="img/speed-2.mp4" poster="img/speed-2.jpg" width="720" height="848" controls muted loop playsinline preload="none"></video></figure><figure><video src="img/speed-3.mp4" poster="img/speed-3.jpg" width="720" height="900" controls muted loop playsinline preload="none"></video></figure></div>
       </article>
 
       <article class="det pxbox" data-d="three-d" hidden>
